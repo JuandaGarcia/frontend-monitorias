@@ -45,12 +45,13 @@
 					</div>
 				</header>
 				<main>
-           @foreach (var item in _monitorias)
+           @* @foreach (var item in _monitorias)
         {
             <div style="margin: 20px; width: 300px;">
                 @item["Name"]
             </div>
-        }
+        } *@
+				<button @onclick="@getData">hola</button>
         </main>
 			</div>
 		</div>
@@ -61,12 +62,12 @@
      protected override async Task OnInitializedAsync() { await getMonitorias(); }
 
     private async Task getMonitorias() => _monitorias = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(await
-        Http.GetStringAsync("http://localhost:5000/api/usuarios/"));
+        Http.GetStringAsync("http://localhost:5000/api/monitorias/"));
 
     }
 @code {
 
-  async void sendData()
+  async void getData()
     {
         var response = await Http.GetStringAsync("http://localhost:8080/api/monitorias");
 
