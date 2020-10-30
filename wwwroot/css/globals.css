@@ -1,0 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+	color: rgb(59, 59, 59);
+}
+
+:root {
+	--main-blue: #2968e2;
+	--main-blue-oscuro: #2e61c7;
+}
+
+.color-white {
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+}

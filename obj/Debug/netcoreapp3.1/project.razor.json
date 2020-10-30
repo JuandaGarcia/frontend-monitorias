@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\TodoList.csproj",
+  "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\TodoList.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -12,101 +12,68 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 1284581302,
+        "HashCode": 1869159565,
         "Kind": "Components.Component",
-        "Name": "TodoList.App",
+        "Name": "TodoList.Pages.SignUp",
         "AssemblyName": "TodoList",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "SignUp"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.App"
+          "Common.TypeName": "TodoList.Pages.SignUp"
         }
       },
       {
-        "HashCode": -1604431260,
+        "HashCode": -2070027353,
         "Kind": "Components.Component",
-        "Name": "TodoList.App",
+        "Name": "TodoList.Pages.SignUp",
         "AssemblyName": "TodoList",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.App"
+            "TagName": "TodoList.Pages.SignUp"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.App",
+          "Common.TypeName": "TodoList.Pages.SignUp",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": -1086799247,
+        "HashCode": 2028571075,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.Counter",
+        "Name": "TodoList.Pages.Login",
         "AssemblyName": "TodoList",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Counter"
+            "TagName": "Login"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.Counter"
+          "Common.TypeName": "TodoList.Pages.Login"
         }
       },
       {
-        "HashCode": -1199857162,
+        "HashCode": 173436252,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.Counter",
+        "Name": "TodoList.Pages.Login",
         "AssemblyName": "TodoList",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.Pages.Counter"
+            "TagName": "TodoList.Pages.Login"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.Counter",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -5857055,
-        "Kind": "Components.Component",
-        "Name": "TodoList.Pages.FetchData",
-        "AssemblyName": "TodoList",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.FetchData"
-        }
-      },
-      {
-        "HashCode": -1217383613,
-        "Kind": "Components.Component",
-        "Name": "TodoList.Pages.FetchData",
-        "AssemblyName": "TodoList",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "TodoList.Pages.FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.FetchData",
+          "Common.TypeName": "TodoList.Pages.Login",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -144,6 +111,39 @@
         }
       },
       {
+        "HashCode": -1086799247,
+        "Kind": "Components.Component",
+        "Name": "TodoList.Pages.Counter",
+        "AssemblyName": "TodoList",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Counter"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "TodoList.Pages.Counter"
+        }
+      },
+      {
+        "HashCode": -1199857162,
+        "Kind": "Components.Component",
+        "Name": "TodoList.Pages.Counter",
+        "AssemblyName": "TodoList",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "TodoList.Pages.Counter"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "TodoList.Pages.Counter",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 348501268,
         "Kind": "Components.Component",
         "Name": "TodoList.Pages.Todo",
@@ -177,55 +177,101 @@
         }
       },
       {
-        "HashCode": -595709566,
+        "HashCode": -5857055,
         "Kind": "Components.Component",
-        "Name": "TodoList.Shared.SurveyPrompt",
+        "Name": "TodoList.Pages.FetchData",
         "AssemblyName": "TodoList",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
+            "TagName": "FetchData"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Shared.SurveyPrompt"
+          "Common.TypeName": "TodoList.Pages.FetchData"
         }
       },
       {
-        "HashCode": -469614984,
+        "HashCode": -1217383613,
         "Kind": "Components.Component",
-        "Name": "TodoList.Shared.SurveyPrompt",
+        "Name": "TodoList.Pages.FetchData",
         "AssemblyName": "TodoList",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
+            "TagName": "TodoList.Pages.FetchData"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Shared.SurveyPrompt",
+          "Common.TypeName": "TodoList.Pages.FetchData",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1322652069,
+        "Kind": "Components.Component",
+        "Name": "TodoList.Pages.AdminPanel",
+        "AssemblyName": "TodoList",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "AdminPanel"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "TodoList.Pages.AdminPanel"
+        }
+      },
+      {
+        "HashCode": -1124293802,
+        "Kind": "Components.Component",
+        "Name": "TodoList.Pages.AdminPanel",
+        "AssemblyName": "TodoList",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "TodoList.Pages.AdminPanel"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "TodoList.Pages.AdminPanel",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 718441825,
+        "Kind": "Components.Component",
+        "Name": "TodoList.Pages.AdminGetMonitorias",
+        "AssemblyName": "TodoList",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "AdminGetMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "TodoList.Pages.AdminGetMonitorias"
+        }
+      },
+      {
+        "HashCode": -1658029497,
+        "Kind": "Components.Component",
+        "Name": "TodoList.Pages.AdminGetMonitorias",
+        "AssemblyName": "TodoList",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "TodoList.Pages.AdminGetMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "TodoList.Pages.AdminGetMonitorias",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -355,6 +401,92 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "TodoList.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -595709566,
+        "Kind": "Components.Component",
+        "Name": "TodoList.Shared.SurveyPrompt",
+        "AssemblyName": "TodoList",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "TodoList.Shared.SurveyPrompt"
+        }
+      },
+      {
+        "HashCode": -469614984,
+        "Kind": "Components.Component",
+        "Name": "TodoList.Shared.SurveyPrompt",
+        "AssemblyName": "TodoList",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "TodoList.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "TodoList.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1284581302,
+        "Kind": "Components.Component",
+        "Name": "TodoList.App",
+        "AssemblyName": "TodoList",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "TodoList.App"
+        }
+      },
+      {
+        "HashCode": -1604431260,
+        "Kind": "Components.Component",
+        "Name": "TodoList.App",
+        "AssemblyName": "TodoList",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "TodoList.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "TodoList.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -14739,58 +14871,78 @@
   "RootNamespace": "TodoList",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\_Imports.razor",
-      "TargetPath": "_Imports.razor",
-      "FileKind": "componentImport"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\Shared\\MainLayout.razor",
-      "TargetPath": "Shared\\MainLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\Pages\\_Host.cshtml",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\_Host.cshtml",
       "TargetPath": "Pages\\_Host.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\App.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\App.razor",
       "TargetPath": "App.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\Pages\\Todo.razor",
-      "TargetPath": "Pages\\Todo.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\Pages\\Index.razor",
-      "TargetPath": "Pages\\Index.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\Pages\\FetchData.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\FetchData.razor",
       "TargetPath": "Pages\\FetchData.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\TodoList\\Shared\\NavMenu.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\SignUp.razor",
+      "TargetPath": "Pages\\SignUp.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Todo.razor",
+      "TargetPath": "Pages\\Todo.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Counter.razor",
+      "TargetPath": "Pages\\Counter.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\NavMenu.razor",
       "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Index.razor",
+      "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\AdminGetMonitorias.razor",
+      "TargetPath": "Pages\\AdminGetMonitorias.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Login.razor",
+      "TargetPath": "Pages\\Login.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\_Imports.razor",
+      "TargetPath": "_Imports.razor",
+      "FileKind": "componentImport"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\AdminPanel.razor",
+      "TargetPath": "Pages\\AdminPanel.razor",
       "FileKind": "component"
     }
   ],

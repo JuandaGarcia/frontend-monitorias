@@ -1,0 +1,59 @@
+@page "/sign-up"
+
+<main class="loginRegister">
+			<section class="loginRegister__formSection">
+				<img class="loginRegister__logo" src="/img/logo.png" alt="Logo" />
+				<form class="loginRegister__form" action="">
+					<h1 class="loginRegister__title">Registrarse</h1>
+					<input
+						placeholder="Nombre"
+						class="loginRegister__input"
+						type="text"
+					/>
+					<input
+						placeholder="Código"
+						class="loginRegister__input"
+						type="text"
+					/>
+					<select class="loginRegister__input" name="" id="">
+						<option selected="selected" value="Facultad">Facultad</option>
+						<option  value="Facultad de Ciencias Básicas">Facultad de Ciencias Básicas</option>
+						<option value="Facultad de Ciencias Básicas">Facultad de Ciencias Básicas</option>
+						<option value="Facultad de Ciencias Económicas y Empresariales">Facultad de Ciencias Económicas y Empresariales</option>
+						<option value="Facultad de Comunicación  y Publicidad">Facultad de Comunicación  y Publicidad</option>
+						<option value="Facultad de Derecho">Facultad de Derecho</option>
+						<option value="Facultad de Educación">Facultad de Educación</option>
+						<option value="Facultad de Ingeniería">Facultad de Ingeniería</option>
+						<option value="Facultad de Salud">Facultad de Salud</option>
+					</select>
+					<input
+						placeholder="Correo"
+						class="loginRegister__input"
+						type="email"
+					/>
+					<input
+						placeholder="Contraseña"
+						class="loginRegister__input"
+						type="password"
+					/>
+					<button class="loginRegister__button">Registrarse</button>
+					<p class="loginRegister__question">
+						¿Ya tienes cuenta?
+						<a class="loginRegister__question__a" href="/login"> Inicia Sesión </a>
+					</p>
+				</form>
+			</section>
+			<section class="loginRegister__imageSection--register">
+				<h2 class="loginRegister__imageSection__title">
+					Sistema de <br />
+					monitorías
+				</h2>
+				<img
+					class="loginRegister__imageSection__img--register"
+					src="/img/login-register/students2.png"
+					alt="Estudiantes"
+				/>
+			</section>
+		</main>
+
+@* <SurveyPrompt Title="How is Blazor working for you?" /> *@

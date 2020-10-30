@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Juand\\Desktop\\TodoList\\TodoList.csproj": {}
+    "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\TodoList.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Juand\\Desktop\\TodoList\\TodoList.csproj": {
+    "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\TodoList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Juand\\Desktop\\TodoList\\TodoList.csproj",
+        "projectUniqueName": "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\TodoList.csproj",
         "projectName": "TodoList",
-        "projectPath": "C:\\Users\\Juand\\Desktop\\TodoList\\TodoList.csproj",
+        "projectPath": "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\TodoList.csproj",
         "packagesPath": "C:\\Users\\Juand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Juand\\Desktop\\TodoList\\obj\\",
+        "outputPath": "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Juand\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -35,6 +35,24 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

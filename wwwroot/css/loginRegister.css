@@ -1,0 +1,146 @@
+.loginRegister {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.loginRegister__formSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 20%;
+}
+
+.loginRegister__logo {
+	width: 15%;
+	margin-bottom: 15%;
+}
+
+.loginRegister__title {
+	margin-bottom: 1em;
+	font-size: 2.5em;
+}
+
+.loginRegister__form {
+	display: flex;
+	flex-direction: column;
+}
+
+.loginRegister__input {
+	height: 3.125em;
+	box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 0.625em;
+	border: none;
+	outline: none;
+	padding: 0 1em;
+	margin: 1em 0;
+}
+
+.loginRegister__input:focus {
+	border: 1px solid var(--main-blue);
+}
+
+.loginRegister__button {
+	height: 3.125em;
+	background: var(--main-blue);
+	font-weight: bold;
+	border: none;
+	border-radius: 1.5625em;
+	color: white;
+	margin: 1em 0;
+	transition: 0.2s;
+	box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.loginRegister__button:hover {
+	cursor: pointer;
+	background: var(--main-blue-oscuro);
+}
+
+.loginRegister__question {
+	margin-top: 1em;
+	text-align: center;
+}
+
+.loginRegister__question__a {
+	color: var(--main-blue);
+	text-decoration: none;
+}
+
+.loginRegister__imageSection {
+	background: url('/img/login-register/backgroud.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	padding: 5em;
+	overflow: hidden;
+}
+
+.loginRegister__imageSection--register {
+	background: url('/img/login-register/backgroud2.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	padding: 5em;
+	overflow: hidden;
+}
+
+.loginRegister__imageSection__img {
+	width: 80%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	transform: translateY(100vh);
+	animation: students 1s forwards;
+}
+
+.loginRegister__imageSection__img--register {
+	width: 50%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	transform: translateY(100vh);
+	animation: students2 1s forwards;
+}
+
+.loginRegister__imageSection__title {
+	color: white;
+	font-size: 3em;
+	transform: translateY(-100vh);
+	animation: title 1s forwards;
+}
+
+@keyframes students {
+	from {
+		opacity: 0;
+		transform: translateY(100vh);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes students2 {
+	from {
+		opacity: 0;
+		transform: translateX(100vw);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes title {
+	from {
+		opacity: 0;
+		transform: translateY(-100vh);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
