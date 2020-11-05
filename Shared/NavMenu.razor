@@ -1,42 +1,33 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">TodoList</a>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
-
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="todo">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Todo
-            </NavLink>
-        </li>
-    </ul>
-</div>
-
-@code {
-    private bool collapseNavMenu = true;
-
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+﻿<div class="mainLayout__navPanel">
+				<div class="mainLayout__navPanel__user">
+					<img
+						class="mainLayout__navPanel__img"
+						src="/img/perfil.svg"
+						alt="Perfil"
+					/>
+					<div>
+						<span class="mainLayout__navPanel__username">Admin</span>
+						<br />
+						<span>USC</span>
+					</div>
+				</div>
+				<nav class="nav">
+					<ul class="nav__ul">
+						<li>
+							<a href="/monitorias" class="nav__item">
+								<span class="nav__item__text">Monitorias</span>
+							</a>
+						</li>
+						<li>
+							<a href="/" class="nav__item">
+								<span class="nav__item__text">Monitores</span>
+							</a>
+						</li>
+						<li>
+							<a href="/" class="nav__item">
+								<span class="nav__item__text--logOut">Cerrar Sesión</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>

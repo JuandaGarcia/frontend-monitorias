@@ -1,6 +1,6 @@
 using System;
 
-namespace TodoList.Data
+namespace Frontend.Data
 {
     public class WeatherForecast
     {

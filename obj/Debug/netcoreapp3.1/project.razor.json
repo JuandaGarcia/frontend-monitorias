@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\TodoList.csproj",
+  "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Frontend.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -12,109 +12,10 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 1869159565,
+        "HashCode": 341140486,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.SignUp",
-        "AssemblyName": "TodoList",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SignUp"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.SignUp"
-        }
-      },
-      {
-        "HashCode": -2070027353,
-        "Kind": "Components.Component",
-        "Name": "TodoList.Pages.SignUp",
-        "AssemblyName": "TodoList",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "TodoList.Pages.SignUp"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.SignUp",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 2028571075,
-        "Kind": "Components.Component",
-        "Name": "TodoList.Pages.Login",
-        "AssemblyName": "TodoList",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Login"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.Login"
-        }
-      },
-      {
-        "HashCode": 173436252,
-        "Kind": "Components.Component",
-        "Name": "TodoList.Pages.Login",
-        "AssemblyName": "TodoList",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "TodoList.Pages.Login"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.Login",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -723622470,
-        "Kind": "Components.Component",
-        "Name": "TodoList.Pages.Index",
-        "AssemblyName": "TodoList",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.Index"
-        }
-      },
-      {
-        "HashCode": -386776446,
-        "Kind": "Components.Component",
-        "Name": "TodoList.Pages.Index",
-        "AssemblyName": "TodoList",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "TodoList.Pages.Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.Index",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1086799247,
-        "Kind": "Components.Component",
-        "Name": "TodoList.Pages.Counter",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.Counter",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
@@ -123,163 +24,282 @@
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.Counter"
+          "Common.TypeName": "Frontend.Pages.Counter"
         }
       },
       {
-        "HashCode": -1199857162,
+        "HashCode": 835901596,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.Counter",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.Counter",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.Pages.Counter"
+            "TagName": "Frontend.Pages.Counter"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.Counter",
+          "Common.TypeName": "Frontend.Pages.Counter",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": 348501268,
+        "HashCode": 2092751565,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.Todo",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.EditarMonitoria",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Todo"
+            "TagName": "EditarMonitoria"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.Todo"
+          "Common.TypeName": "Frontend.Pages.EditarMonitoria"
         }
       },
       {
-        "HashCode": -1425314833,
+        "HashCode": 614773753,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.Todo",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.EditarMonitoria",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.Pages.Todo"
+            "TagName": "Frontend.Pages.EditarMonitoria"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.Todo",
+          "Common.TypeName": "Frontend.Pages.EditarMonitoria",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": -5857055,
+        "HashCode": -1022176171,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.FetchData",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.Login",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "FetchData"
+            "TagName": "Login"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.FetchData"
+          "Common.TypeName": "Frontend.Pages.Login"
         }
       },
       {
-        "HashCode": -1217383613,
+        "HashCode": 599136220,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.FetchData",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.Login",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.Pages.FetchData"
+            "TagName": "Frontend.Pages.Login"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.FetchData",
+          "Common.TypeName": "Frontend.Pages.Login",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": -1322652069,
+        "HashCode": -939387378,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.AdminPanel",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.Registro",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "AdminPanel"
+            "TagName": "Registro"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.AdminPanel"
+          "Common.TypeName": "Frontend.Pages.Registro"
         }
       },
       {
-        "HashCode": -1124293802,
+        "HashCode": 2103832581,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.AdminPanel",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.Registro",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.Pages.AdminPanel"
+            "TagName": "Frontend.Pages.Registro"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.AdminPanel",
+          "Common.TypeName": "Frontend.Pages.Registro",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": 718441825,
+        "HashCode": 1994279576,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.AdminGetMonitorias",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.Store",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "AdminGetMonitorias"
+            "TagName": "Store"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.AdminGetMonitorias"
+          "Common.TypeName": "Frontend.Pages.Store"
         }
       },
       {
-        "HashCode": -1658029497,
+        "HashCode": -2022693373,
         "Kind": "Components.Component",
-        "Name": "TodoList.Pages.AdminGetMonitorias",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.Store",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.Pages.AdminGetMonitorias"
+            "TagName": "Frontend.Pages.Store"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Pages.AdminGetMonitorias",
+          "Common.TypeName": "Frontend.Pages.Store",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": 1458074880,
+        "HashCode": 1135285378,
         "Kind": "Components.Component",
-        "Name": "TodoList.Shared.MainLayout",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Pages.CrearMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CrearMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.CrearMonitorias"
+        }
+      },
+      {
+        "HashCode": 1074532362,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.CrearMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.CrearMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.CrearMonitorias",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -2105323887,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Monitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Monitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.Monitorias"
+        }
+      },
+      {
+        "HashCode": 67119220,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Monitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.Monitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.Monitorias",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 440888153,
+        "Kind": "Components.Component",
+        "Name": "Frontend.App",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.App"
+        }
+      },
+      {
+        "HashCode": -792464467,
+        "Kind": "Components.Component",
+        "Name": "Frontend.App",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1819147346,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Shared.MainLayout",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
@@ -300,18 +320,18 @@
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Shared.MainLayout"
+          "Common.TypeName": "Frontend.Shared.MainLayout"
         }
       },
       {
-        "HashCode": -1052232993,
+        "HashCode": 747474134,
         "Kind": "Components.Component",
-        "Name": "TodoList.Shared.MainLayout",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Shared.MainLayout",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.Shared.MainLayout"
+            "TagName": "Frontend.Shared.MainLayout"
           }
         ],
         "BoundAttributes": [
@@ -328,15 +348,15 @@
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Shared.MainLayout",
+          "Common.TypeName": "Frontend.Shared.MainLayout",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": 1652400874,
+        "HashCode": -18337530,
         "Kind": "Components.ChildContent",
-        "Name": "TodoList.Shared.MainLayout.Body",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Shared.MainLayout.Body",
+        "AssemblyName": "Frontend",
         "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
         "CaseSensitive": true,
         "TagMatchingRules": [
@@ -347,35 +367,35 @@
         ],
         "Metadata": {
           "Runtime.Name": "Components.None",
-          "Common.TypeName": "TodoList.Shared.MainLayout.Body",
+          "Common.TypeName": "Frontend.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent"
         }
       },
       {
-        "HashCode": -13255512,
+        "HashCode": 1474321589,
         "Kind": "Components.ChildContent",
-        "Name": "TodoList.Shared.MainLayout.Body",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Shared.MainLayout.Body",
+        "AssemblyName": "Frontend",
         "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
             "TagName": "Body",
-            "ParentTag": "TodoList.Shared.MainLayout"
+            "ParentTag": "Frontend.Shared.MainLayout"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.None",
-          "Common.TypeName": "TodoList.Shared.MainLayout.Body",
+          "Common.TypeName": "Frontend.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": -1373506023,
+        "HashCode": 183801651,
         "Kind": "Components.Component",
-        "Name": "TodoList.Shared.NavMenu",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Shared.NavMenu",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
@@ -384,31 +404,31 @@
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Shared.NavMenu"
+          "Common.TypeName": "Frontend.Shared.NavMenu"
         }
       },
       {
-        "HashCode": 319495479,
+        "HashCode": 1712394633,
         "Kind": "Components.Component",
-        "Name": "TodoList.Shared.NavMenu",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Shared.NavMenu",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.Shared.NavMenu"
+            "TagName": "Frontend.Shared.NavMenu"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Shared.NavMenu",
+          "Common.TypeName": "Frontend.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
       {
-        "HashCode": -595709566,
+        "HashCode": 2053123514,
         "Kind": "Components.Component",
-        "Name": "TodoList.Shared.SurveyPrompt",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Shared.SurveyPrompt",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
@@ -427,18 +447,18 @@
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Shared.SurveyPrompt"
+          "Common.TypeName": "Frontend.Shared.SurveyPrompt"
         }
       },
       {
-        "HashCode": -469614984,
+        "HashCode": 1302121694,
         "Kind": "Components.Component",
-        "Name": "TodoList.Shared.SurveyPrompt",
-        "AssemblyName": "TodoList",
+        "Name": "Frontend.Shared.SurveyPrompt",
+        "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "TodoList.Shared.SurveyPrompt"
+            "TagName": "Frontend.Shared.SurveyPrompt"
           }
         ],
         "BoundAttributes": [
@@ -453,40 +473,7 @@
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.Shared.SurveyPrompt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1284581302,
-        "Kind": "Components.Component",
-        "Name": "TodoList.App",
-        "AssemblyName": "TodoList",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.App"
-        }
-      },
-      {
-        "HashCode": -1604431260,
-        "Kind": "Components.Component",
-        "Name": "TodoList.App",
-        "AssemblyName": "TodoList",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "TodoList.App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "TodoList.App",
+          "Common.TypeName": "Frontend.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -14868,81 +14855,76 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "TodoList",
+  "RootNamespace": "Frontend",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\_Host.cshtml",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Pages\\Store.razor",
+      "TargetPath": "Pages\\Store.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Pages\\Monitorias.razor",
+      "TargetPath": "Pages\\Monitorias.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Pages\\_Host.cshtml",
       "TargetPath": "Pages\\_Host.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\App.razor",
-      "TargetPath": "App.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Pages\\EditarMonitoria.razor",
+      "TargetPath": "Pages\\EditarMonitoria.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\FetchData.razor",
-      "TargetPath": "Pages\\FetchData.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Pages\\Registro.razor",
+      "TargetPath": "Pages\\Registro.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\SignUp.razor",
-      "TargetPath": "Pages\\SignUp.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Todo.razor",
-      "TargetPath": "Pages\\Todo.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\MainLayout.razor",
-      "TargetPath": "Shared\\MainLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Counter.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Pages\\Counter.razor",
       "TargetPath": "Pages\\Counter.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\NavMenu.razor",
-      "TargetPath": "Shared\\NavMenu.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Index.razor",
-      "TargetPath": "Pages\\Index.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\AdminGetMonitorias.razor",
-      "TargetPath": "Pages\\AdminGetMonitorias.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Login.razor",
-      "TargetPath": "Pages\\Login.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\_Imports.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
     },
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\AdminPanel.razor",
-      "TargetPath": "Pages\\AdminPanel.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Pages\\CrearMonitorias.razor",
+      "TargetPath": "Pages\\CrearMonitorias.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\App.razor",
+      "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Shared\\MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Shared\\NavMenu.razor",
+      "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\segundo-parcial-dotnet\\Parte 3 - Frontend\\Pages\\Login.razor",
+      "TargetPath": "Pages\\Login.razor",
       "FileKind": "component"
     }
   ],

@@ -1,0 +1,79 @@
+@page "/nueva-monitoria" 
+@using System.Net.Http
+@inject HttpClient Http
+
+<div class="mainLayout">
+			<NavMenu/>
+			<div class="mainLayout__container">
+				<header class="mainLayout__container__header">
+					<div class="mainLayout__container__header__gradient">
+						<h1 class="color-white">Sistema de monitorias</h1>
+						<span class="color-white">Universidad Santiago de Cali</span>
+					</div>
+				</header>
+				<main>
+          <form>
+						<input required placeholder="Nombre" type="text" @bind="name" />
+						<select required @bind="faculty">
+							<option value="Facultad de Ciencias Básicas">
+								Facultad de Ciencias Básicas
+							</option>
+							<option value="Facultad de Ciencias Económicas y Empresariales">
+								Facultad de Ciencias Económicas y Empresariales
+							</option>
+							<option value="Facultad de Comunicación  y Publicidad">
+								Facultad de Comunicación y Publicidad
+							</option>
+							<option value="Facultad de Derecho">Facultad de Derecho</option>
+							<option value="Facultad de Educación">
+								Facultad de Educación
+							</option>
+							<option value="Facultad de Ingeniería">
+								Facultad de Ingeniería
+							</option>
+							<option value="Facultad de Salud">Facultad de Salud</option>
+						</select>
+						<select required @bind="day">
+							<option value="Lunes">Lunes</option>
+							<option value="Martes">Martes</option>
+							<option value="Miércoles">Miércoles</option>
+							<option value="Jueves">Jueves</option>
+							<option value="Viernes">Viernes</option>
+							<option value="Sábado">Sábado</option>
+							<option value="Domingo">Domingo</option>
+						</select>
+						<label for="init">
+							Hora de inicio
+							<input id="init" type="time" min="07:00" max="18:00" required @bind="init" />
+						</label>
+						<label for="init">
+							Hora de Fin
+							<input id="init" type="time" min="07:00" max="18:00" required @bind="end"/>
+						</label>
+						<input placeholder="Sala" required type="text" @bind="livingRoom"/>
+						<input placeholder="Total de cupos" required type="number" @bind="initialQuotas"/>
+						<textarea placeholder="Descripción" cols="30" rows="10" @bind="description"></textarea>
+						<button @onclick="@sendData" type="button">Enviar</button>
+					</form>
+        </main>
+			</div>
+		</div>
+
+@code {
+  private string name;
+  private string faculty;
+  private string day;
+  private DateTime init;
+  private DateTime end;
+  private string livingRoom;
+  private string initialQuotas;
+  private string description;
+
+  private async Task sendData()
+    {
+        var postBody = new { name = name, faculty = faculty, day= day, init= init.ToString(), end= end.ToString(), livingRoom= livingRoom, initialQuotas= initialQuotas, description= description};
+        var response = await Http.PostAsJsonAsync("http://localhost:8080/api/monitorias", postBody);
+
+        Console.WriteLine(response);
+    }
+}

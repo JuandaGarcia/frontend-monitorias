@@ -1,0 +1,97 @@
+@page "/monitorias"
+@using System.Net.Http
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+  <div class="mainLayout">
+		@if (modal == true){
+			<div class="modal">
+					<div class="modal__container">
+						<button @onclick="closeModal" class="modal__container__exit"></button>
+						<p>¿Quieres eliminar esta monitoria?</p>
+						<div>
+							<button @onclick="closeModal" class="modal__container__button">
+								Cancelar
+							</button>
+							<button
+								class="modal__container__button modal__container__button--red"
+								@onclick="eliminarMonitoria"
+							>
+								Eliminar
+							</button>
+						</div>
+					</div>
+				<div @onclick="closeModal" class="modal__overlay"></div>
+			</div>
+		}
+			<NavMenu/>
+			<div class="mainLayout__container">
+				<header class="mainLayout__container__header">
+					<div class="mainLayout__container__header__gradient">
+						<h1 class="color-white">Sistema de monitorias</h1>
+						<span class="color-white">Universidad Santiago de Cali</span>
+					</div>
+				</header>
+				<main>
+					<div class="monitorias">
+          @if (loading == false){
+            @foreach (var item in monitorias)
+            {
+							<div class="monitorias__item">
+								<div class="monitorias__item__header">
+									<h2>@item.Name</h2>
+									<div>
+										<a href="/monitorias/@item.Id" class="monitorias__item__button edit"></a>
+										<button @onclick="@(() => openModal(item.Id))" class="monitorias__item__button trash"></button>
+									</div>
+								</div>
+								<hr>
+              	@item.faculty
+							</div>
+            }
+          }else{
+            <div>loading...</div>
+          }
+					</div>
+        </main>
+			</div>
+		</div>
+
+@code {
+  public bool loading = true;
+  public bool modal = false;
+  public string currentId = "";
+	
+  
+  Monitoria[] monitorias { get; set; }
+
+  private static readonly System.Text.Json.JsonSerializerOptions s_options = 
+    new System.Text.Json.JsonSerializerOptions() 
+  {
+    PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase,
+    PropertyNameCaseInsensitive = true,
+  };
+  
+  protected override async Task OnInitializedAsync()
+    {
+        var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
+        monitorias = httpResponse;
+        loading = false;
+    }
+
+	private void openModal(string id)
+    {
+				currentId = id;
+        modal = true;
+    }
+	private void closeModal()
+    {
+				currentId = "";
+        modal = false;
+    }
+
+	private async Task eliminarMonitoria(){
+		var httpResponse = await Http.DeleteAsync("http://localhost:8080/api/monitorias/"+currentId);
+		closeModal();
+	}
+}

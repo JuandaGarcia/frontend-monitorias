@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TodoList.Data
+namespace Frontend.Data
 {
     public class WeatherForecastService
     {

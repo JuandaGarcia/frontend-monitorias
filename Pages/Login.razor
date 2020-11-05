@@ -1,4 +1,8 @@
-@page "/login"
+﻿@page "/login"
+@using System.Net.Http
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
 
 <main class="loginRegister">
 			<section class="loginRegister__formSection">
@@ -18,14 +22,16 @@
 					<button class="loginRegister__button">Iniciar Sesión</button>
 					<p class="loginRegister__question">
 						¿Aún no tienes cuenta?
-						<a class="loginRegister__question__a" href="/sign-up"> Regístrate </a>
+						<a class="loginRegister__question__a" href="/register">
+							Regístrate
+						</a>
 					</p>
 				</form>
 			</section>
 			<section class="loginRegister__imageSection">
 				<h2 class="loginRegister__imageSection__title">
 					Sistema de <br />
-					monitorías
+					monitorias
 				</h2>
 				<img
 					class="loginRegister__imageSection__img"
@@ -35,4 +41,39 @@
 			</section>
 		</main>
 
-@* <SurveyPrompt Title="How is Blazor working for you?" /> *@
+@code {
+  private string email;
+  private string password;
+  private string error;
+
+  public class responseData
+    { 
+        public string token { get; set; }
+        public string error { get; set; }
+    }
+
+  private void OnPasswordChanged(ChangeEventArgs e)
+    {
+        password = e.Value.ToString();
+    }
+  private void OnEmailChanged(ChangeEventArgs e)
+    {
+        email = e.Value.ToString();
+    }
+
+  private async Task sendData()
+    {
+        var postBody = new { email = email, password = password };
+        var response = await Http.PostAsJsonAsync("http://localhost:8080/api/users", postBody);
+
+        var responseString = await response.Content.ReadFromJsonAsync<responseData>();
+        if (responseString.token != null)
+        {
+            NavigationManager.NavigateTo("/store");
+        }
+        if (responseString.error != null)
+        {
+            error = responseString.error;
+        }
+    }
+}

@@ -8,6 +8,8 @@
 .mainLayout__navPanel {
 	box-shadow: 7px 0px 50px rgba(0, 0, 0, 0.05);
 	padding: 3em;
+	position: sticky;
+	top: 0;
 }
 
 .mainLayout__navPanel__user {

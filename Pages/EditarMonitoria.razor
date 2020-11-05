@@ -1,0 +1,89 @@
+@page "/monitorias/{id}"
+@using System.Net.Http
+@using System.Net.Http.Json
+@inject HttpClient Http
+
+
+<div class="mainLayout">
+			<NavMenu/>
+			<div class="mainLayout__container">
+				<header class="mainLayout__container__header">
+					<div class="mainLayout__container__header__gradient">
+						<h1 class="color-white">Sistema de monitorias</h1>
+						<span class="color-white">Universidad Santiago de Cali</span>
+					</div>
+				</header>
+				<main>
+          @if (loading == false){
+          <h1>Blazor is @monitoria.Name!</h1>
+          
+          <form>
+						<input required placeholder="Nombre" type="text" @bind="monitoria.Name" />
+						<select required @bind="monitoria.faculty">
+							<option value="Facultad de Ciencias Básicas">
+								Facultad de Ciencias Básicas
+							</option>
+							<option value="Facultad de Ciencias Económicas y Empresariales">
+								Facultad de Ciencias Económicas y Empresariales
+							</option>
+							<option value="Facultad de Comunicación  y Publicidad">
+								Facultad de Comunicación y Publicidad
+							</option>
+							<option value="Facultad de Derecho">Facultad de Derecho</option>
+							<option value="Facultad de Educación">
+								Facultad de Educación
+							</option>
+							<option value="Facultad de Ingeniería">
+								Facultad de Ingeniería
+							</option>
+							<option value="Facultad de Salud">Facultad de Salud</option>
+						</select>
+						<select required @bind="monitoria.day">
+							<option value="Lunes">Lunes</option>
+							<option value="Martes">Martes</option>
+							<option value="Miércoles">Miércoles</option>
+							<option value="Jueves">Jueves</option>
+							<option value="Viernes">Viernes</option>
+							<option value="Sábado">Sábado</option>
+							<option value="Domingo">Domingo</option>
+						</select>
+						<label for="init">
+							Hora de inicio
+							<input id="init" type="time" min="07:00" max="18:00" required @* @bind="monitoria.init" *@ />
+						</label>
+						<label for="init">
+							Hora de Fin
+							<input id="init" type="time" min="07:00" max="18:00" required @* @bind="monitoria.end" *@/>
+						</label>
+						<input placeholder="Sala" required type="text" @bind="monitoria.livingRoom"/>
+						<input placeholder="Total de cupos" required type="number" @bind="monitoria.initialQuotas"/>
+						<textarea placeholder="Descripción" cols="30" rows="10" @bind="monitoria.description"></textarea>
+						<button @* @onclick="@sendData" *@ type="button">Enviar</button>
+					</form>
+          }
+        </main>
+			</div>
+		</div>
+
+@code {
+  [Parameter]
+  public string Id { get; set; }
+
+  public bool loading = true;
+  
+  Monitoria monitoria { get; set; }
+
+  private static readonly System.Text.Json.JsonSerializerOptions s_options = 
+    new System.Text.Json.JsonSerializerOptions() 
+  {
+    PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase,
+    PropertyNameCaseInsensitive = true,
+  };
+  
+  protected override async Task OnInitializedAsync()
+    {
+        var httpResponse = await Http.GetFromJsonAsync<Monitoria>("http://localhost:8080/api/monitorias/"+Id, s_options);
+        monitoria = httpResponse;
+        loading = false;
+    }
+}
