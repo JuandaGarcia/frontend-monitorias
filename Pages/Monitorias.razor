@@ -92,6 +92,7 @@
 
 	private async Task eliminarMonitoria(){
 		var httpResponse = await Http.DeleteAsync("http://localhost:8080/api/monitorias/"+currentId);
+		monitorias = await httpResponse.Content.ReadFromJsonAsync<Monitoria[]>();
 		closeModal();
 	}
 }
