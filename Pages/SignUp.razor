@@ -1,4 +1,7 @@
 @page "/sign-up"
+@using System.Net.Http
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
 
 <main class="loginRegister">
 			<section class="loginRegister__formSection">
@@ -9,13 +12,15 @@
 						placeholder="Nombre"
 						class="loginRegister__input"
 						type="text"
+						@bind="name"
 					/>
 					<input
 						placeholder="Código"
 						class="loginRegister__input"
 						type="text"
+						@bind="code"
 					/>
-					<select class="loginRegister__input" name="" id="">
+					<select class="loginRegister__input" @bind="career">
 						<option selected="selected" value="Facultad">Facultad</option>
 						<option  value="Facultad de Ciencias Básicas">Facultad de Ciencias Básicas</option>
 						<option value="Facultad de Ciencias Básicas">Facultad de Ciencias Básicas</option>
@@ -30,13 +35,15 @@
 						placeholder="Correo"
 						class="loginRegister__input"
 						type="email"
+						@bind="mail"
 					/>
 					<input
 						placeholder="Contraseña"
 						class="loginRegister__input"
 						type="password"
+						@bind="password"
 					/>
-					<button class="loginRegister__button">Registrarse</button>
+					<button class="loginRegister__button" type="button" @onclick="@sendData">Registrarse</button>
 					<p class="loginRegister__question">
 						¿Ya tienes cuenta?
 						<a class="loginRegister__question__a" href="/login"> Inicia Sesión </a>
@@ -56,4 +63,23 @@
 			</section>
 		</main>
 
-@* <SurveyPrompt Title="How is Blazor working for you?" /> *@
+@code {
+  private string name;
+  private string career;
+  private string mail;
+  private string code;
+  private string password;
+
+  private string _error = "";
+
+
+  private async Task sendData()
+    {
+        var postBody = new { name = name, code = code, career= career, mail= mail,  password= password};
+        var response = await Http.PostAsJsonAsync("http://localhost:8080/api/usuarios", postBody);
+
+        Console.WriteLine(response);
+		
+        
+    }
+}

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\TodoList.csproj": {}
+    "C:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\TodoList.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\TodoList.csproj": {
+    "C:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\TodoList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\TodoList.csproj",
+        "projectUniqueName": "C:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\TodoList.csproj",
         "projectName": "TodoList",
-        "projectPath": "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\TodoList.csproj",
-        "packagesPath": "C:\\Users\\Juand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\obj\\",
+        "projectPath": "C:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\TodoList.csproj",
+        "packagesPath": "C:\\Users\\catic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Juand\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\catic\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
