@@ -1,5 +1,8 @@
 @page "/login"
 
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
 <main class="loginRegister">
 			<section class="loginRegister__formSection">
 				<img class="loginRegister__logo" src="/img/logo.png" alt="Logo" />
@@ -9,16 +12,18 @@
 						placeholder="Correo"
 						class="loginRegister__input"
 						type="email"
+						@bind="mail"
 					/>
 					<input
 						placeholder="Contraseña"
 						class="loginRegister__input"
 						type="password"
+						@bind="password"
 					/>
 					<button class="loginRegister__button">Iniciar Sesión</button>
 					<p class="loginRegister__question">
 						¿Aún no tienes cuenta?
-						<a class="loginRegister__question__a" href="/sign-up"> Regístrate </a>
+						<a class="loginRegister__question__a" href="/sign-up" type="button" @onclick="@sendData"> Regístrate </a>
 					</p>
 				</form>
 			</section>
@@ -35,4 +40,22 @@
 			</section>
 		</main>
 
-@* <SurveyPrompt Title="How is Blazor working for you?" /> *@
+@code{
+    private string mail;
+    private string password;
+    private string _error = "";
+
+    private async void sendData()
+    {
+        var respuesta = await Http.GetStringAsync("http://localhost:8080/api/usuarios/" + mail + "/" + password);
+
+        if (respuesta != "error")
+        {
+            NavigationManager.NavigateTo($"/monitorias");
+        }
+        else
+        {
+            _error = "No existe...";
+        }
+    }
+}
