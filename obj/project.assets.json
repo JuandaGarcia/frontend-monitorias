@@ -5344,19 +5344,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Juand\\.nuget\\packages\\": {}
+    "C:\\Users\\catic\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Frontend.csproj",
+      "projectUniqueName": "C:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Frontend.csproj",
       "projectName": "Frontend",
-      "projectPath": "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Frontend.csproj",
-      "packagesPath": "C:\\Users\\Juand\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\obj\\",
+      "projectPath": "C:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Frontend.csproj",
+      "packagesPath": "C:\\Users\\catic\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Juand\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\catic\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5405,7 +5405,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

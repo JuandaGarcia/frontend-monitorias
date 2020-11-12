@@ -5,75 +5,69 @@
 @inject NavigationManager NavigationManager
 
 <main class="loginRegister">
-			<section class="loginRegister__formSection">
-				<img class="loginRegister__logo" src="/img/logo.png" alt="Logo" />
-				<form class="loginRegister__form" action="">
-					<h1 class="loginRegister__title">Iniciar Sesión</h1>
-					<input
-						placeholder="Correo"
-						class="loginRegister__input"
-						type="email"
-					/>
-					<input
-						placeholder="Contraseña"
-						class="loginRegister__input"
-						type="password"
-					/>
-					<button class="loginRegister__button">Iniciar Sesión</button>
-					<p class="loginRegister__question">
-						¿Aún no tienes cuenta?
-						<a class="loginRegister__question__a" href="/register">
-							Regístrate
-						</a>
-					</p>
-				</form>
-			</section>
-			<section class="loginRegister__imageSection">
-				<h2 class="loginRegister__imageSection__title">
-					Sistema de <br />
-					monitorias
-				</h2>
-				<img
-					class="loginRegister__imageSection__img"
-					src="/img/login-register/students.png"
-					alt="Estudiantes"
-				/>
-			</section>
-		</main>
+	<section class="loginRegister__formSection">
+		<img class="loginRegister__logo" src="/img/logo.png" alt="Logo" />
+		<form class="loginRegister__form" action="">
+			<h1 class="loginRegister__title">Iniciar Sesión</h1>
+			<input placeholder="Correo" class="loginRegister__input" type="email" value="@mail"
+				@oninput="OnEmailChanged" />
+			<input placeholder="Contraseña" class="loginRegister__input" type="password" value="@password"
+				@oninput="OnPasswordChanged" />
+			<button class="loginRegister__button" type="button" @onclick="@sendData">Iniciar Sesión</button>
+			<p class="loginRegister__question">
+				¿Aún no tienes cuenta?
+				<a class="loginRegister__question__a" href="/register">
+					Regístrate
+				</a>
+			</p>
+		</form>
+	</section>
+	<section class="loginRegister__imageSection">
+		<h2 class="loginRegister__imageSection__title">
+			Sistema de <br />
+			monitorias
+		</h2>
+		<img class="loginRegister__imageSection__img" src="/img/login-register/students.png" alt="Estudiantes" />
+	</section>
+</main>
 
 @code {
-  private string email;
-  private string password;
-  private string error;
+	private string mail;
+	private string password;
+	private string error;
 
-  public class responseData
-    { 
-        public string token { get; set; }
-        public string error { get; set; }
-    }
+	public class responseData
+	{
+		public string token { get; set; }
+		public string error { get; set; }
+	}
 
-  private void OnPasswordChanged(ChangeEventArgs e)
-    {
-        password = e.Value.ToString();
-    }
-  private void OnEmailChanged(ChangeEventArgs e)
-    {
-        email = e.Value.ToString();
-    }
+	private void OnPasswordChanged(ChangeEventArgs e)
+	{
+		password = e.Value.ToString();
+	}
+	private void OnEmailChanged(ChangeEventArgs e)
+	{
+		mail = e.Value.ToString();
+	}
 
-  private async Task sendData()
-    {
-        var postBody = new { email = email, password = password };
-        var response = await Http.PostAsJsonAsync("http://localhost:8080/api/users", postBody);
+	private async Task sendData()
+	{
+		var postBody = new { mail = mail, password = password };
+		var response = await Http.PostAsJsonAsync("http://localhost:8080/api/usuarios", postBody);
+		Console.WriteLine(response);
 
-        var responseString = await response.Content.ReadFromJsonAsync<responseData>();
-        if (responseString.token != null)
-        {
-            NavigationManager.NavigateTo("/store");
-        }
-        if (responseString.error != null)
-        {
-            error = responseString.error;
-        }
-    }
+
+		var responseString = await response.Content.ReadFromJsonAsync<responseData>();
+		Console.WriteLine(responseString);
+		if (responseString.token != null)
+		{
+			NavigationManager.NavigateTo("/monitorias");
+			Console.WriteLine(responseString);
+		}
+		if (responseString.error != null)
+		{
+			error = responseString.error;
+		}
+	}
 }
