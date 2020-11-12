@@ -68,10 +68,11 @@
   private string livingRoom;
   private string initialQuotas;
   private string description;
+  private string[] students;
 
   private async Task sendData()
     {
-        var postBody = new { name = name, faculty = faculty, day= day, init= init.ToString(), end= end.ToString(), livingRoom= livingRoom, initialQuotas= initialQuotas, description= description};
+        var postBody = new { name = name, faculty = faculty, day= day, init= init.ToString(), end= end.ToString(), livingRoom= livingRoom, initialQuotas= initialQuotas, description= description, students=students};
         var response = await Http.PostAsJsonAsync("http://localhost:8080/api/monitorias", postBody);
 
         Console.WriteLine(response);

@@ -45,39 +45,6 @@
         }
       },
       {
-        "HashCode": 1135285378,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.CrearMonitorias",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CrearMonitorias"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.CrearMonitorias"
-        }
-      },
-      {
-        "HashCode": 1074532362,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.CrearMonitorias",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Pages.CrearMonitorias"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.CrearMonitorias",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 2092751565,
         "Kind": "Components.Component",
         "Name": "Frontend.Pages.EditarMonitoria",
@@ -226,6 +193,72 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Frontend.Pages.Store",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -2105323887,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Monitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Monitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.Monitorias"
+        }
+      },
+      {
+        "HashCode": 67119220,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Monitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.Monitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.Monitorias",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1135285378,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.CrearMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CrearMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.CrearMonitorias"
+        }
+      },
+      {
+        "HashCode": 1074532362,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.CrearMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.CrearMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.CrearMonitorias",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
