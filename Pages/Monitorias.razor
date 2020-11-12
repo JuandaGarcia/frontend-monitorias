@@ -2,6 +2,7 @@
 @using System.Net.Http
 @using System.Net.Http.Json
 @inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 
   <div class="mainLayout">
 		@if (modal == true){
@@ -49,6 +50,8 @@
               	@item.faculty
 							</div>
             }
+
+			@token[1]
           }else{
             <div>loading...</div>
           }
@@ -61,8 +64,8 @@
   public bool loading = true;
   public bool modal = false;
   public string currentId = "";
+  public string[] token;
 	
-  
   Monitoria[] monitorias { get; set; }
 
   private static readonly System.Text.Json.JsonSerializerOptions s_options = 
@@ -77,6 +80,9 @@
         var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
         monitorias = httpResponse;
         loading = false;
+		var aux = await localStorage.GetItemAsync<string>("token");
+		token = aux.Split("-");
+
     }
 
 	private void openModal(string id)
@@ -84,7 +90,7 @@
 				currentId = id;
         modal = true;
     }
-	private void closeModal()
+ 	private void closeModal()
     {
 				currentId = "";
         modal = false;

@@ -53,7 +53,7 @@
 
 	public class responseData
 	{
-
+		public string token { get; set; }
 		public string error { get; set; }
 	}
 
@@ -61,21 +61,17 @@
 	private async void sendData()
 	{
 		var postBody = new { name = name, code = code, career = career, mail = mail, password = password };
-		var res = Http.PostAsJsonAsync("http://localhost:8080/api/usuarios", postBody).Result;
+		var response = await Http.PostAsJsonAsync("http://localhost:8080/api/usuarios/register", postBody);
 
+		var responseString = await response.Content.ReadFromJsonAsync<responseData>();
 
-		Console.WriteLine(res.StatusCode);
-
-		if ((int)res.StatusCode == 200)
+		if (responseString.error == "")
 		{
-			await Http.PostAsJsonAsync("http://localhost:8080/api/usuarios", postBody);
-
 			NavigationManager.NavigateTo("/monitorias");
 		}
 		else
 		{
-			Console.WriteLine("error");
+			_error = responseString.error;
 		}
-
 	}
 }

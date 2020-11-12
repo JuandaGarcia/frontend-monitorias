@@ -298,3 +298,15 @@ C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\obj\Debug\netcoreapp
 C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\obj\Debug\netcoreapp3.1\Frontend.dll
 C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\obj\Debug\netcoreapp3.1\Frontend.pdb
 C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\obj\Debug\netcoreapp3.1\Frontend.genruntimeconfig.cache
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Blazored.LocalStorage.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
