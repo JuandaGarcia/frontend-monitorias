@@ -2,6 +2,7 @@
 @using System.Net.Http
 @inject HttpClient Http
 
+
 <div class="mainLayout">
 			<NavMenu/>
 			<div class="mainLayout__container">
@@ -12,9 +13,28 @@
 					</div>
 				</header>
 				<main>
-          <form>
-						<input required placeholder="Nombre" type="text" @bind="name" />
-						<select required @bind="faculty">
+					@if (success)
+					{
+							<div class="success">
+								<img class="success__img" src="/img/icons/check.svg" alt=":D">
+								<h2>La monitoria se creo<br>satisfactoriamente</h2>
+								<a class="ghotsBtn" href="/monitorias">Ir al inicio</a>
+							</div>
+					}else{
+						@if (error)
+						{
+								<div class="success">
+								<img class="success__img" src="/img/icons/delete.svg" alt=":D">
+								<h2>Ocurrió un error al<br>crear la monitoria</h2>
+								<a class="ghotsBtn" href="/monitorias">Ir al inicio</a>
+							</div>
+						}else {
+
+          <form class="form-monitoria" @onsubmit="sendData" @onsubmit:preventDefault>
+						<h2 class="form-monitoria__title">Crear monotoria</h2>
+						<input class="form-monitoria__input long" required placeholder="Nombre" type="text" @bind="name" />
+						<select class="form-monitoria__input long" required @bind="faculty">
+							<option value="" disabled hidden>Facultad</option>
 							<option value="Facultad de Ciencias Básicas">
 								Facultad de Ciencias Básicas
 							</option>
@@ -33,7 +53,8 @@
 							</option>
 							<option value="Facultad de Salud">Facultad de Salud</option>
 						</select>
-						<select required @bind="day">
+						<select class="form-monitoria__input" required @bind="day">
+							<option value="" disabled hidden>Día</option>
 							<option value="Lunes">Lunes</option>
 							<option value="Martes">Martes</option>
 							<option value="Miércoles">Miércoles</option>
@@ -43,18 +64,24 @@
 							<option value="Domingo">Domingo</option>
 						</select>
 						<label for="init">
-							Hora de inicio
-							<input id="init" type="time" min="07:00" max="18:00" required @bind="init" />
+							<span class="form-monitoria__input__span">
+							Hora de inicio:
+							</span>
+							<input class="form-monitoria__input" id="init" type="time" min="07:00" max="18:00" required @bind="init" />
 						</label>
-						<label for="init">
-							Hora de Fin
-							<input id="init" type="time" min="07:00" max="18:00" required @bind="end"/>
+						<label for="end">
+							<span class="form-monitoria__input__span">
+							Hora de Fin:
+							</span>
+							<input class="form-monitoria__input" id="end" type="time" min="07:00" max="18:00" required @bind="end"/>
 						</label>
-						<input placeholder="Sala" required type="text" @bind="livingRoom"/>
-						<input placeholder="Total de cupos" required type="number" @bind="initialQuotas"/>
-						<textarea placeholder="Descripción" cols="30" rows="10" @bind="description"></textarea>
-						<button @onclick="@sendData" type="button">Enviar</button>
+						<input class="form-monitoria__input half" placeholder="Sala" required type="text" @bind="livingRoom"/>
+						<input class="form-monitoria__input half" placeholder="Total de cupos" min="0" required type="number" @bind="initialQuotas"/>
+						<textarea class="form-monitoria__input text-area long" placeholder="Descripción" cols="30" rows="5" @bind="description"></textarea>
+						<button class="form-monitoria__button" type="submit">Enviar</button>
 					</form>
+						}
+					}
         </main>
 			</div>
 		</div>
@@ -69,12 +96,21 @@
   private string initialQuotas;
   private string description;
   private string[] students;
+	public bool success = false;
+	public bool error = false;
 
   private async Task sendData()
     {
+			try
+			{	
         var postBody = new { name = name, faculty = faculty, day= day, init= init.ToString(), end= end.ToString(), livingRoom= livingRoom, initialQuotas= initialQuotas, description= description, students=students};
         var response = await Http.PostAsJsonAsync("http://localhost:8080/api/monitorias", postBody);
-
-        Console.WriteLine(response);
+				success = true;
+			}
+			catch (System.Exception)
+			{
+					error = true;
+			}
+	
     }
 }

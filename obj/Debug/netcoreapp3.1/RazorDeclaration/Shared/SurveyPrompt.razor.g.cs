@@ -76,6 +76,13 @@ using Frontend.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\Juand\Desktop\dotnet\monitorias-front\_Imports.razor"
+using Blazored.LocalStorage;
+
+#line default
+#line hidden
+#nullable disable
     public partial class SurveyPrompt : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

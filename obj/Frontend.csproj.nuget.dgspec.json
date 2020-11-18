@@ -36,6 +36,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
               "version": "[5.2.7, )"
