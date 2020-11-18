@@ -76,6 +76,12 @@
 	transition: 0.3s;
 }
 
+.nav__item__logout {
+	border: none;
+	background: none;
+	outline: none;
+}
+
 .nav__item.active {
 	background: var(--main-blue);
 }

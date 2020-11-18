@@ -1,4 +1,7 @@
-﻿<div class="mainLayout__navPanel">
+﻿@inject NavigationManager NavigationManager
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+
+<div class="mainLayout__navPanel">
 				<div class="mainLayout__navPanel__user">
 					<img
 						class="mainLayout__navPanel__img"
@@ -24,10 +27,18 @@
 							</a>
 						</li>
 						<li>
-							<a href="/" class="nav__item">
+							<button @onclick="logOut" class="nav__item__logout">
 								<span class="nav__item__text--logOut">Cerrar Sesión</span>
-							</a>
+							</button>
 						</li>
 					</ul>
 				</nav>
 			</div>
+
+@code {
+	public async void logOut()
+	{
+    await LocalStorage.RemoveItemAsync("token");
+		NavigationManager.NavigateTo("/login");
+	}
+}
