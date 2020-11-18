@@ -2,6 +2,12 @@
 @using System.Net.Http
 @using System.Net.Http.Json
 @inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
+
+	@if(loadingToken){
+		<div></div>
+	}else{
 
   <div class="mainLayout">
 		@if (modal == true){
@@ -56,13 +62,15 @@
         </main>
 			</div>
 		</div>
+	}
 
 @code {
   public bool loading = true;
+  bool loadingToken = true;
   public bool modal = false;
   public string currentId = "";
+  public string[] token;
 	
-  
   Monitoria[] monitorias { get; set; }
 
   private static readonly System.Text.Json.JsonSerializerOptions s_options = 
@@ -71,12 +79,29 @@
     PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase,
     PropertyNameCaseInsensitive = true,
   };
+
+	protected async override Task OnAfterRenderAsync(bool firstRender)    
+	{
+		if (firstRender)
+    {
+  			var aux = await localStorage.GetItemAsync<string>("token");
+				if(aux == null){
+					loadingToken = false;
+					NavigationManager.NavigateTo("/login");
+				}else{
+					loadingToken = false;
+        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
+        	monitorias = httpResponse;
+        	loading = false;
+				}
+    }
+		StateHasChanged();
+	}
   
   protected override async Task OnInitializedAsync()
     {
-        var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
-        monitorias = httpResponse;
-        loading = false;
+				
+
     }
 
 	private void openModal(string id)
@@ -84,7 +109,7 @@
 				currentId = id;
         modal = true;
     }
-	private void closeModal()
+ 	private void closeModal()
     {
 				currentId = "";
         modal = false;
