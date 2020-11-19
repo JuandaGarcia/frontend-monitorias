@@ -43,7 +43,8 @@
           @if (loading == false){
             @foreach (var item in monitorias)
             {
-							<div class="monitorias__item">
+				if(usuario.roll == 1){
+					<div class="monitorias__item">
 								<div class="monitorias__item__header">
 									<h2>@item.Name</h2>
 									<div>
@@ -54,6 +55,12 @@
 								<hr>
               	@item.faculty
 							</div>
+				
+
+				}else{
+					<div><span>@item.Name</span> <button>Apuntarse</button></div>
+				}
+							
             }
           }else{
             <div>loading...</div>
@@ -70,6 +77,7 @@
   public bool modal = false;
   public string currentId = "";
   public string[] token;
+  Usuario usuario { get; set; }
 	
   Monitoria[] monitorias { get; set; }
 
@@ -90,6 +98,8 @@
 					NavigationManager.NavigateTo("/login");
 				}else{
 					loadingToken = false;
+			var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );
+				usuario = httpResponseUser; 
         	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
         	monitorias = httpResponse;
         	loading = false;
