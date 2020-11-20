@@ -61,7 +61,7 @@
 
 	private async void sendData()
 	{
-		var postBody = new { name = name, code = code, career = career, mail = mail, password = password };
+		var postBody = new { name = name, code = code, career = career, mail = mail, password = password, roll = 3 };
 		var response = await Http.PostAsJsonAsync("http://localhost:8080/api/usuarios/register", postBody);
 
 		var responseString = await response.Content.ReadFromJsonAsync<responseData>();

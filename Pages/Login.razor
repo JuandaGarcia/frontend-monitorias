@@ -76,10 +76,13 @@
 
 	private async Task sendData()
 	{
+	
 		var postBody = new { mail = mail, password = password };
 		var response = await Http.PostAsJsonAsync("http://localhost:8080/api/usuarios/login", postBody);
 
+
 		var responseString = await response.Content.ReadFromJsonAsync<responseData>();
+			
 
 		if (responseString.error == "")
 		{

@@ -1,4 +1,4 @@
-@page "/monitorias"
+@page "/mis-monitorias"
 @using System.Net.Http
 @using System.Net.Http.Json
 @inject HttpClient Http
@@ -59,39 +59,8 @@
           @if (loading == false){
             @foreach (var item in monitorias)
             {
-				if(usuario.roll == 1){
-					<div class="monitorias__item">
-								<div class="monitorias__item__header">
-									<h2>@item.Name</h2>
-									<div>
-										<a href="/monitorias/@item.Id" class="monitorias__item__button edit"></a>
-										<button @onclick="@(() => openModal(item.Id, "delete"))" class="monitorias__item__button trash"></button>
-									</div>
-								</div>
-								<hr>
-              	@item.faculty
-							</div>
-				
-
-				}else{
-					<div><span>@item.Name</span>
-						@{bool isStudent = false;
-					
-						foreach (var idUser in item.students)
-						{
-							if (idUser == usuario.Id)
-							{
-									isStudent = true;
-							}
-						}
-						if (!isStudent)
-						{
-							<button @onclick="@(() => openModal(item.Id, "addstudent"))">Apuntarse</button>	
-						}
-						}
-					</div>
-				}
-							
+				    <div><span>@item.Name</span>
+					  </div>
             }
           }else{
             <div>loading...</div>
@@ -132,7 +101,7 @@
 					loadingToken = false;
 					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );
 					usuario = httpResponseUser; 
-        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
+        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/list/"+usuario.Id, s_options);
         	monitorias = httpResponse;
         	loading = false;
 				}
