@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Frontend.Data;
 using System.Net.Http;
 using Blazored.LocalStorage;
+using Newtonsoft.Json;
 
 namespace Frontend
 {
@@ -32,6 +33,7 @@ namespace Frontend
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<HttpClient>();
             services.AddBlazoredLocalStorage();
+            services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

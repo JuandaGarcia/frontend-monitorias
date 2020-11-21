@@ -51,7 +51,6 @@
 							</div>
             }
 
-			@token[1]
           }else{
             <div>loading...</div>
           }
@@ -80,8 +79,7 @@
         var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
         monitorias = httpResponse;
         loading = false;
-		var aux = await localStorage.GetItemAsync<string>("token");
-		token = aux.Split("-");
+		
 
     }
 
