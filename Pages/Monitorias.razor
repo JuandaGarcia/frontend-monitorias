@@ -46,7 +46,13 @@
 				<div @onclick="closeModal" class="modal__overlay"></div>
 			</div>
 		}
+			@if (loading == false){
+			@if(usuario.roll==1){
 			<NavMenu />
+			}else{
+			<NavMenuUser />
+			}
+			}
 			<div class="mainLayout__container">
 				<header class="mainLayout__container__header">
 					<div class="mainLayout__container__header__gradient">
@@ -139,12 +145,6 @@
     }
 		StateHasChanged();
 	}
-  
-  protected override async Task OnInitializedAsync()
-    {
-				
-
-    }
 
 	private void openModal(string id, string typeModal)
     {

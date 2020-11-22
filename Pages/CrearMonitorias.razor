@@ -34,7 +34,7 @@
 						<h2 class="form-monitoria__title">Crear monotoria</h2>
 						<input class="form-monitoria__input long" required placeholder="Nombre" type="text" @bind="name" />
 						<select class="form-monitoria__input long" required @bind="faculty">
-							<option value="" disabled hidden>Facultad</option>
+							<option value="" disabled hidden ></option>
 							<option value="Facultad de Ciencias Básicas">
 								Facultad de Ciencias Básicas
 							</option>
@@ -54,7 +54,7 @@
 							<option value="Facultad de Salud">Facultad de Salud</option>
 						</select>
 						<select class="form-monitoria__input" required @bind="day">
-							<option value="" disabled hidden>Día</option>
+							<option value="" disabled hidden></option>
 							<option value="Lunes">Lunes</option>
 							<option value="Martes">Martes</option>
 							<option value="Miércoles">Miércoles</option>
@@ -105,7 +105,7 @@ string[] students =  new List<string>().ToArray();
 			try
 			{	
 
-        var postBody = new { name = name, faculty = faculty, day= day, init= init.ToString(), end= end.ToString(), livingRoom= livingRoom, initialQuotas= initialQuotas, description= description, students=students};
+        var postBody = new { name = name, faculty = faculty, day= day, init= init.ToString(), end= end.ToString(), livingRoom= livingRoom, initialQuotas= initialQuotas, description= description, students=students, monitor=""};
         var response = await Http.PostAsJsonAsync("http://localhost:8080/api/monitorias", postBody);
 				success = true;
 			}

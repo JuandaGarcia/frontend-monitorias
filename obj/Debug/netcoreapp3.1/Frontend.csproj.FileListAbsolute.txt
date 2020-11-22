@@ -395,3 +395,5 @@ C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\Razor\Sha
 C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenuUser.razor.g.cs
 C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MisMonitorias.razor.g.cs
 C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\Razor\Pages\MisMonitorias.razor.g.cs
+C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Usuarios.razor.g.cs
+C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\Razor\Pages\Usuarios.razor.g.cs

@@ -1,0 +1,268 @@
+@page "/usuarios"
+@using System.Net.Http
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
+
+	@if(loadingToken){
+		<div></div>
+	}else{
+
+  <div class="mainLayout">
+		@if (modal == true){
+			<div class="modal">
+					<div class="modal__container">
+						<button @onclick="closeModal" class="modal__container__exit"></button>
+						@if(currentModal == "monitor") {
+						<p>¿Quieres cambiar el rol de este usuario a Monitor?</p>
+						<div>
+							<button @onclick="closeModal" class="modal__container__button">
+								Cancelar
+							</button>
+							<button
+								class="modal__container__button modal__container__button--blue"
+								@onclick="@(() =>changeRol(2))"
+							>
+								Aceptar
+							</button>
+						</div>
+						}
+						@if(currentModal == "estudiante") {
+						<p>¿Quieres cambiar el rol de este usuario a Estudiante?</p>
+						<div>
+							<button @onclick="closeModal" class="modal__container__button">
+								Cancelar
+							</button>
+							<button
+								class="modal__container__button modal__container__button--blue"
+								@onclick="@(() =>changeRol(3))"
+							>
+								Aceptar
+							</button>
+						</div>
+						}
+					</div>
+				<div @onclick="closeModal" class="modal__overlay"></div>
+			</div>
+		}
+      @if(modalMonitor) {
+        <div class="modal">
+					<div class="modal__container monitor">
+            <button @onclick="@(() =>{modalMonitor=false;changeCSS(false);})" class="modal__container__exit"></button>
+            <div class="modal__overflowHidden">
+            <div class="@initial__css__monitorModal">
+            <div class="monitorias-asignadas">
+              <div class="monitorModal__header">
+                <h3 class="monitorModal__header__title">Monitorias asignadas</h3>
+              </div>
+              <div class="monitorias-asignadas__list">
+              @if (loadingMonitoriasModal)
+              {
+                  <span>Cargando...</span>
+              }else {
+                if (monitorias_modal.Length == 0)
+                {
+                  <span>Aún no tiene monitorias asignadas </span>
+                }else {
+                @foreach (var item in monitorias_modal)
+                {
+                    <div>@item.Name</div>
+                    <button @onclick="@(()=>removeMonitor(item.Id, item.monitor))">Elminar</button>
+                }
+                }
+              }
+              </div>
+              <div>
+              <button class="form-monitoria__button modalMonitor" @onclick="addMonitiriaToMonitor">Asignar monitoria</button>
+              </div>
+            </div>
+            <div>
+              <div class="monitorModal__header">
+                <button class="backButton" @onclick="@(()=>changeCSS(false))"></button>
+                <h3 class="monitorModal__header__title">Asignar monitoria</h3>
+              </div>
+              <div>
+                @if (loadingAvailables)
+                {
+                    <span>Cargando...</span>
+                }else {
+                  if (availables.Length == 0)
+                  {
+                    <span>No hay monitorias disponibles</span>
+                  }else {
+                  @foreach (var item in availables)
+                  {
+                      <div>@item.Name</div>
+                  }
+                  }
+                }
+              </div>
+            </div>
+            </div>
+            </div>
+					</div>
+				<div @onclick="@(() =>{modalMonitor=false;changeCSS(false);})" class="modal__overlay"></div>
+			</div>
+      }
+			@if (loading == false){
+			@if(usuario.roll==1){
+			<NavMenu />
+			}else{
+			<NavMenuUser />
+			}
+			}
+			<div class="mainLayout__container">
+				<header class="mainLayout__container__header">
+					<div class="mainLayout__container__header__gradient">
+						<h1 class="color-white">Sistema de monitorias</h1>
+						<span class="color-white">Universidad Santiago de Cali</span>
+					</div>
+				</header>
+				<main>
+					<div class="monitorias">
+          <h1>Usuarios</h1>
+          <br>
+          <br>
+          @if (loading == false){
+            @foreach (var item in usuarios)
+            {
+              <div class="userItem">
+                @if (@item.roll == 3)
+                { 
+                <img class="userItem__img" src="/img/icons/user.svg" alt="@item.name">
+                }else{
+                <img class="userItem__img" src="/img/icons/monitor.svg" alt="@item.name">
+                }
+                <div>
+                  <span><strong>ID: </strong>@item.Id</span><br><br>
+                  <span><strong>Código: </strong>@item.code</span><br><br>
+                  <span><strong>Nombre: </strong> @item.name</span><br><br>
+                  <span><strong>Facultad: </strong>@item.career</span><br><br>
+                  <span><strong>Rol: </strong>
+                  @if (item.roll == 2)
+                  {
+                      <span>Monitor</span>
+                  }else {
+                      <span>Estudiante</span>
+                  }
+                  </span>
+                </div>
+                @if (@item.roll == 3)
+                {  
+                <div>
+                <button class="userItem__button" @onclick="@(() => openModal(item, "monitor"))">Cambiar rol a Monitor</button>
+                </div>
+                }else {
+                <div>
+                <button class="userItem__button" @onclick="@(() => openModal(item, "estudiante"))">Cambiar rol a Estudiante</button>
+                <button class="userItem__button monitor" @onclick="@(() => getDataMonitor(item.Id))">Monitorias asignadas</button>
+                </div>
+                }
+              </div>
+            }
+          }else{
+            <div>loading...</div>
+          }
+					</div>
+        </main>
+			</div>
+		</div>
+	}
+
+@code {
+  public bool loading = true;
+  bool loadingToken = true;
+  bool loadingMonitoriasModal = true;
+  bool loadingAvailables = true;
+  public bool modal = false;
+  public bool modalMonitor = false;
+  public string currentModal = "";
+  public string[] token;
+  public string initial__css__monitorModal = "modal__container__monitor";
+
+  Usuario currentChangeRol { get; set; }
+  Usuario usuario { get; set; }
+	
+  Usuario[] usuarios { get; set; }
+  Monitoria[] monitorias_modal { get; set; }
+  Monitoria[] availables { get; set; }
+
+  private static readonly System.Text.Json.JsonSerializerOptions s_options = 
+    new System.Text.Json.JsonSerializerOptions() 
+  {
+    PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase,
+    PropertyNameCaseInsensitive = true,
+  };
+
+	protected async override Task OnAfterRenderAsync(bool firstRender)    
+	{
+		if (firstRender)
+    {
+  			var aux = await localStorage.GetItemAsync<string>("token");
+				if(aux == null){
+					loadingToken = false;
+					NavigationManager.NavigateTo("/login");
+				}else{
+					loadingToken = false;
+					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );
+					usuario = httpResponseUser;
+        	var httpResponse = await Http.GetFromJsonAsync<Usuario[]>("http://localhost:8080/api/usuarios/", s_options);
+        	usuarios = httpResponse;
+        	loading = false;
+				}
+    }
+		StateHasChanged();
+	}
+
+  private void changeCSS(bool open)
+    {
+        if (open)
+        {
+          initial__css__monitorModal = "modal__container__monitor add";
+        }else {
+          initial__css__monitorModal = "modal__container__monitor";
+        }
+    }
+
+  private async Task addMonitiriaToMonitor() {
+    changeCSS(true);
+    loadingAvailables = true;
+    var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/availables/", s_options);
+    availables = httpResponse;
+    loadingAvailables = false;
+	}
+  
+	private void openModal(Usuario user, string typeModal)
+    {
+				currentModal = typeModal;
+				currentChangeRol = user;
+        modal = true;
+    }
+ 	  private void closeModal()
+    {
+        modal = false;
+    }
+
+  private async Task getDataMonitor(string id) {
+    loadingMonitoriasModal = true;
+    modalMonitor = true;
+    var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/monitor/"+id, s_options);
+    monitorias_modal = httpResponse;
+    loadingMonitoriasModal = false;
+	}
+  
+  private async Task changeRol(int rol) {
+    Usuario newRolUser = currentChangeRol;
+    newRolUser.roll = rol;
+		var httpResponse = await Http.PutAsJsonAsync<Usuario>("http://localhost:8080/api/usuarios/change-rol/"+currentChangeRol.Id, newRolUser);
+		closeModal();
+	}
+  private async Task removeMonitor(string idMonitoria, string idMonitor) {
+    loadingMonitoriasModal = true;
+		var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/remove-monitor/"+idMonitoria+"/"+idMonitor, s_options);
+    monitorias_modal = httpResponse;
+    loadingMonitoriasModal = false;
+	}
+
+}
