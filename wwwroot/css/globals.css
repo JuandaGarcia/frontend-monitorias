@@ -37,3 +37,9 @@ a {
 	background: var(--main-blue);
 	border-radius: 5px;
 }
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

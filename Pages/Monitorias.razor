@@ -35,7 +35,7 @@
 								Cancelar
 							</button>
 							<button
-								class="modal__container__button modal__container__button--red"
+								class="modal__container__button modal__container__button--blue"
 								@onclick="addStudent"
 							>
 								Inscribir
@@ -75,12 +75,38 @@
 									</div>
 								</div>
 								<hr>
-              	@item.faculty
+								<br>
+								<p>
+              		@item.faculty
+								</p>
+								<br>
+								<p><strong>Día: </strong>@item.day</p>
+								<br>
+								<p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
+								<br>
+								<p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
+								<br>
+								<p><strong>Sala: </strong>@item.livingRoom</p>
+								<br>
+								<p><strong>Cupos: </strong>@item.initialQuotas</p>
 							</div>
-				
-
 				}else{
-					<div><span>@item.Name</span>
+					<div class="add-monitoria__item">
+					<div>
+					<h3 class="add-monitoria__item__title">
+					@item.Name
+					</h3>
+					<br>
+					<p>
+						@item.faculty
+					</p>
+					<p><strong>Día: </strong>@item.day</p>
+					<p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
+					<p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
+					<p><strong>Sala: </strong>@item.livingRoom</p>
+					<p><strong>Cupos: </strong>@item.initialQuotas</p>
+					</div>
+					<div class="flex-center">
 						@{bool isStudent = false;
 					
 						foreach (var idUser in item.students)
@@ -92,9 +118,10 @@
 						}
 						if (!isStudent)
 						{
-							<button @onclick="@(() => openModal(item.Id, "addstudent"))">Apuntarse</button>	
+							<button class="form-monitoria__button modalMonitor" @onclick="@(() => openModal(item.Id, "addstudent"))">Apuntarse</button>
 						}
 						}
+					</div>
 					</div>
 				}
 							

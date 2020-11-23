@@ -165,6 +165,10 @@
 	width: auto;
 }
 
+.form-monitoria__button.modalMonitor.red {
+	background: rgb(255, 93, 93);
+}
+
 .form-monitoria__button.modalMonitor {
 	display: flex;
 	align-items: center;

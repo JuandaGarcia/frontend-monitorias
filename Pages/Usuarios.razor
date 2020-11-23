@@ -46,8 +46,54 @@
 				<div @onclick="closeModal" class="modal__overlay"></div>
 			</div>
 		}
+		@if (modalAddRemove == true){
+			<div class="modal top">
+          <style>
+            body {
+                overflow: hidden;
+            }
+          </style>
+					<div class="modal__container">
+						<button @onclick="@(() =>{modalAddRemove=false;})" class="modal__container__exit"></button>
+						@if(currentModalAddRemove == "add") {
+						<p>¿Quieres asignar esta monitoria al monitor?</p>
+						<div>
+							<button @onclick="@(() =>{modalAddRemove=false;})" class="modal__container__button">
+								Cancelar
+							</button>
+							<button
+								class="modal__container__button modal__container__button--blue"
+								@onclick="@(() =>addMonitor())"
+							>
+								Aceptar
+							</button>
+						</div>
+						}
+						@if(currentModalAddRemove == "remove") {
+						<p>¿Quieres esta monitoria eliminar de las monitorias asignadas?</p>
+						<div>
+							<button @onclick="@(() =>{modalAddRemove=false;})" class="modal__container__button">
+								Cancelar
+							</button>
+							<button
+								class="modal__container__button modal__container__button--red"
+								@onclick="@(() =>removeMonitor())"
+							>
+								Aceptar
+							</button>
+						</div>
+						}
+					</div>
+				<div @onclick="@(() =>{modalAddRemove=false;})" class="modal__overlay"></div>
+			</div>
+		}
       @if(modalMonitor) {
         <div class="modal">
+          <style>
+            body {
+                overflow: hidden;
+            }
+          </style>
 					<div class="modal__container monitor">
             <button @onclick="@(() =>{modalMonitor=false;changeCSS(false);})" class="modal__container__exit"></button>
             <div class="modal__overflowHidden">
@@ -67,22 +113,39 @@
                 }else {
                 @foreach (var item in monitorias_modal)
                 {
-                    <div>@item.Name</div>
-                    <button @onclick="@(()=>removeMonitor(item.Id, item.monitor))">Elminar</button>
+                    <div class="add-monitoria__item">
+                        <div>
+                        <h3 class="add-monitoria__item__title">
+                        @item.Name
+                        </h3>
+                        <br>
+                        <p>
+                          @item.faculty
+                        </p>
+                        <p><strong>Día: </strong>@item.day</p>
+                        <p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
+                        <p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
+                        <p><strong>Sala: </strong>@item.livingRoom</p>
+                        <p><strong>Cupos: </strong>@item.initialQuotas</p>
+                        </div>
+                        <div class="flex-center">
+                        <button  class="form-monitoria__button modalMonitor red" @onclick="@(()=>openModalAddRemove(item.Id, "remove"))">Eliminar</button>
+                        </div>
+                      </div>
                 }
                 }
               }
               </div>
-              <div>
+              <div class="monitorias-asignadas__button">
               <button class="form-monitoria__button modalMonitor" @onclick="addMonitiriaToMonitor">Asignar monitoria</button>
               </div>
             </div>
-            <div>
+            <div class="monitorModal__container">
               <div class="monitorModal__header">
                 <button class="backButton" @onclick="@(()=>changeCSS(false))"></button>
                 <h3 class="monitorModal__header__title">Asignar monitoria</h3>
               </div>
-              <div>
+              <div class="add-monitoria">
                 @if (loadingAvailables)
                 {
                     <span>Cargando...</span>
@@ -93,8 +156,27 @@
                   }else {
                   @foreach (var item in availables)
                   {
-                      <div>@item.Name</div>
+                      <div class="add-monitoria__item">
+                        <div>
+                        <h3 class="add-monitoria__item__title">
+                        @item.Name
+                        </h3>
+                        <br>
+                        <p>
+                          @item.faculty
+                        </p>
+                        <p><strong>Día: </strong>@item.day</p>
+                        <p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
+                        <p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
+                        <p><strong>Sala: </strong>@item.livingRoom</p>
+                        <p><strong>Cupos: </strong>@item.initialQuotas</p>
+                        </div>
+                        <div class="flex-center">
+                        <button class="form-monitoria__button modalMonitor" @onclick="@(()=>openModalAddRemove(item.Id, "add"))">Asignar</button>
+                        </div>
+                      </div>
                   }
+                  <br>
                   }
                 }
               </div>
@@ -177,7 +259,11 @@
   bool loadingAvailables = true;
   public bool modal = false;
   public bool modalMonitor = false;
+  public bool modalAddRemove = false;
   public string currentModal = "";
+  public string currentModalAddRemove = "";
+  public string currentMonitorId = "";
+  public string currentAddRemoveMonitoria = "";
   public string[] token;
   public string initial__css__monitorModal = "modal__container__monitor";
 
@@ -243,8 +329,16 @@
     {
         modal = false;
     }
+	  private void openModalAddRemove(string idMonitoria, string typeModal)
+    {
+				currentModalAddRemove = typeModal;
+				currentAddRemoveMonitoria = idMonitoria;
+        modalAddRemove = true;
+    }
+ 	  
 
   private async Task getDataMonitor(string id) {
+    currentMonitorId = id;
     loadingMonitoriasModal = true;
     modalMonitor = true;
     var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/monitor/"+id, s_options);
@@ -258,11 +352,20 @@
 		var httpResponse = await Http.PutAsJsonAsync<Usuario>("http://localhost:8080/api/usuarios/change-rol/"+currentChangeRol.Id, newRolUser);
 		closeModal();
 	}
-  private async Task removeMonitor(string idMonitoria, string idMonitor) {
+  private async Task removeMonitor() {
     loadingMonitoriasModal = true;
-		var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/remove-monitor/"+idMonitoria+"/"+idMonitor, s_options);
+		var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/remove-monitor/"+currentAddRemoveMonitoria+"/"+currentMonitorId, s_options);
     monitorias_modal = httpResponse;
     loadingMonitoriasModal = false;
+    modalAddRemove = false;
+	}
+  private async Task addMonitor() {
+    loadingMonitoriasModal = true;
+		var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/add-monitor/"+currentAddRemoveMonitoria+"/"+currentMonitorId, s_options);
+    monitorias_modal = httpResponse;
+    loadingMonitoriasModal = false;
+    modalAddRemove = false;
+    changeCSS(false);
 	}
 
 }
