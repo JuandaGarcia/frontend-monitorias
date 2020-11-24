@@ -12,138 +12,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 1135285378,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.CrearMonitorias",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "CrearMonitorias"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.CrearMonitorias"
-        }
-      },
-      {
-        "HashCode": 1074532362,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.CrearMonitorias",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Pages.CrearMonitorias"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.CrearMonitorias",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1022176171,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Login",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Login"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Login"
-        }
-      },
-      {
-        "HashCode": 599136220,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Login",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Pages.Login"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Login",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -829998261,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.MisMonitorias",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MisMonitorias"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.MisMonitorias"
-        }
-      },
-      {
-        "HashCode": -1706497371,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.MisMonitorias",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Pages.MisMonitorias"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.MisMonitorias",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -939387378,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Registro",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Registro"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Registro"
-        }
-      },
-      {
-        "HashCode": 2103832581,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Registro",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Pages.Registro"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Registro",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 2092751565,
         "Kind": "Components.Component",
         "Name": "Frontend.Pages.EditarMonitoria",
@@ -197,35 +65,68 @@
         }
       },
       {
-        "HashCode": 2145553873,
+        "HashCode": -1022176171,
         "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Usuarios",
+        "Name": "Frontend.Pages.Login",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Usuarios"
+            "TagName": "Login"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Usuarios"
+          "Common.TypeName": "Frontend.Pages.Login"
         }
       },
       {
-        "HashCode": 1564831477,
+        "HashCode": 599136220,
         "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Usuarios",
+        "Name": "Frontend.Pages.Login",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Frontend.Pages.Usuarios"
+            "TagName": "Frontend.Pages.Login"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Usuarios",
+          "Common.TypeName": "Frontend.Pages.Login",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -939387378,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Registro",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Registro"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.Registro"
+        }
+      },
+      {
+        "HashCode": 2103832581,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Registro",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.Registro"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.Registro",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -259,6 +160,105 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Frontend.Pages.Monitorias",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1135285378,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.CrearMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CrearMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.CrearMonitorias"
+        }
+      },
+      {
+        "HashCode": 1074532362,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.CrearMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.CrearMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.CrearMonitorias",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -829998261,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.MisMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "MisMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.MisMonitorias"
+        }
+      },
+      {
+        "HashCode": -1706497371,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.MisMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.MisMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.MisMonitorias",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 2145553873,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Usuarios",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Usuarios"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.Usuarios"
+        }
+      },
+      {
+        "HashCode": 1564831477,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Usuarios",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.Usuarios"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.Usuarios",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

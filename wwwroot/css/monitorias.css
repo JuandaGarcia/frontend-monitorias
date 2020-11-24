@@ -44,3 +44,71 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+.horario {
+	text-align: center;
+	margin-top: 3em;
+}
+.horario h1 {
+	font-size: 3em;
+	margin-bottom: 1em;
+}
+
+.horario__container {
+	width: 100%;
+	background: #ebebeb;
+	box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.04);
+	border-radius: 16px;
+	padding: 2em;
+	min-height: 40vh;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: 1fr;
+}
+
+.horario__container__item {
+	text-align: center;
+	padding: 0 1em;
+	border-right: 1px solid rgba(206, 206, 206, 0.5);
+	border-left: 1px solid rgba(206, 206, 206, 0.5);
+}
+
+.horario__item {
+	border-radius: 16px;
+	margin: 1em 0;
+	padding: 1em;
+	cursor: pointer;
+}
+
+.horario__item.c1 {
+	background: #ff8d69;
+}
+.horario__item.c2 {
+	background: #67da9c;
+}
+.horario__item.c3 {
+	background: #ffc672;
+}
+.horario__item.c4 {
+	background: #a687ff;
+}
+.horario__item.c5 {
+	background: #ff6b6b;
+}
+.horario__item.c6 {
+	background: #858585;
+}
+.horario__item.c7 {
+	background: #6773da;
+}
+
+.horario__item__title {
+	text-transform: uppercase;
+	color: white;
+	font-weight: bold;
+}
+
+.horario__item__text {
+	text-transform: uppercase;
+	color: white;
+}

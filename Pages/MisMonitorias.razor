@@ -55,17 +55,123 @@
 					</div>
 				</header>
 				<main>
-					<div class="monitorias">
-          @if (loading == false){
-            @foreach (var item in monitorias)
-            {
-				    <div><span>@item.Name</span>
-					  </div>
-            }
-          }else{
-            <div>loading...</div>
-          }
-					</div>
+					<section class="horario">
+						<h1>Horario</h1>
+						<div class="horario__container">
+							<div class="horario__container__item">
+								<h3>Lunes</h3>
+								@{
+								var lunes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Lunes");
+								@foreach (var item in lunes)
+								{
+									<div class="@cssItem(item.faculty)">
+										<span class="horario__item__title">
+											@item.Name
+										</span>
+										<br><br>
+										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
+									</div>
+								}
+								}
+							</div>
+							<div class="horario__container__item">
+								<h3>Martes</h3>
+								@{
+								var martes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Martes");
+								@foreach (var item in martes)
+								{
+									<div class="@cssItem(item.faculty)">
+										<span class="horario__item__title">
+											@item.Name
+										</span>
+										<br><br>
+										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
+									</div>
+								}
+								}
+							</div>
+							<div class="horario__container__item">
+								<h3>Miércoles</h3>
+								@{
+								var miercoles = new List<Monitoria>(monitorias).FindAll(e => e.day == "Miércoles");
+								@foreach (var item in miercoles)
+								{
+									<div class="@cssItem(item.faculty)">
+										<span class="horario__item__title">
+											@item.Name
+										</span>
+										<br><br>
+										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
+									</div>
+								}
+								}
+							</div>
+							<div class="horario__container__item">
+								<h3>Jueves</h3>
+								@{
+								var jueves = new List<Monitoria>(monitorias).FindAll(e => e.day == "Jueves");
+								@foreach (var item in jueves)
+								{
+									<div class="@cssItem(item.faculty)">
+										<span class="horario__item__title">
+											@item.Name
+										</span>
+										<br><br>
+										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
+									</div>
+								}
+								}
+							</div>
+							<div class="horario__container__item">
+								<h3>Viernes</h3>
+								@{
+								var viernes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Viernes");
+								@foreach (var item in viernes)
+								{
+									<div class="@cssItem(item.faculty)">
+										<span class="horario__item__title">
+											@item.Name
+										</span>
+										<br><br>
+										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
+									</div>
+								}
+								}
+							</div>
+							<div class="horario__container__item">
+								<h3>Sábado</h3>
+								@{
+								var sabado = new List<Monitoria>(monitorias).FindAll(e => e.day == "Sábado");
+								@foreach (var item in sabado)
+								{
+									<div class="@cssItem(item.faculty)">
+										<span class="horario__item__title">
+											@item.Name
+										</span>
+										<br><br>
+										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
+									</div>
+								}
+								}
+							</div>
+							<div class="horario__container__item">
+								<h3>Domingo</h3>
+								@{
+								var domingo = new List<Monitoria>(monitorias).FindAll(e => e.day == "Domingo");
+								@foreach (var item in domingo)
+								{
+									<div class="@cssItem(item.faculty)">
+										<span class="horario__item__title">
+											@item.Name
+										</span>
+										<br><br>
+										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
+									</div>
+								}
+								}
+							</div>
+						</div>
+					</section>
         </main>
 			</div>
 		</div>
@@ -108,12 +214,6 @@
     }
 		StateHasChanged();
 	}
-  
-  protected override async Task OnInitializedAsync()
-    {
-				
-
-    }
 
 	private void openModal(string id, string typeModal)
     {
@@ -126,6 +226,29 @@
 				currentId = "";
         modal = false;
     }
+
+	private static string cssItem(string faculty)
+	{
+		switch (faculty)
+		{
+					case "Facultad de Ingeniería":
+              return "horario__item c1";
+          case "Facultad de Ciencias Básicas":
+              return "horario__item c2";
+          case "Facultad de Ciencias Económicas y Empresariales":
+              return "horario__item c3";
+          case "Facultad de Comunicación y Publicidad":
+              return "horario__item c4";
+          case "Facultad de Derecho":
+              return "horario__item c5";
+          case "Facultad de Educación":
+              return "horario__item c6";
+          case "Facultad de Salud":
+              return "horario__item c7";
+          default:
+              return "horario__item c1";
+		}
+	}
 
 	private async Task addStudent() {
 		var httpResponse = await Http.PostAsJsonAsync("http://localhost:8080/api/monitorias/"+currentId+"/"+usuario.Id, s_options);
