@@ -44,6 +44,6 @@
 	public async void logOut()
 	{
     await LocalStorage.RemoveItemAsync("token");
-		NavigationManager.NavigateTo("/login");
+		NavigationManager.NavigateTo("/");
 	}
 }

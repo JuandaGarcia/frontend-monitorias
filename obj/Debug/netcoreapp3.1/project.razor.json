@@ -98,68 +98,35 @@
         }
       },
       {
-        "HashCode": 2145553873,
+        "HashCode": -1022176171,
         "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Usuarios",
+        "Name": "Frontend.Pages.Login",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Usuarios"
+            "TagName": "Login"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Usuarios"
+          "Common.TypeName": "Frontend.Pages.Login"
         }
       },
       {
-        "HashCode": 1564831477,
+        "HashCode": 599136220,
         "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Usuarios",
+        "Name": "Frontend.Pages.Login",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Frontend.Pages.Usuarios"
+            "TagName": "Frontend.Pages.Login"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Usuarios",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -829998261,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.MisMonitorias",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MisMonitorias"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.MisMonitorias"
-        }
-      },
-      {
-        "HashCode": -1706497371,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.MisMonitorias",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Pages.MisMonitorias"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.MisMonitorias",
+          "Common.TypeName": "Frontend.Pages.Login",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -197,39 +164,6 @@
         }
       },
       {
-        "HashCode": -1062151425,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.MonitoriasAsignadas",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MonitoriasAsignadas"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.MonitoriasAsignadas"
-        }
-      },
-      {
-        "HashCode": 290557117,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.MonitoriasAsignadas",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Pages.MonitoriasAsignadas"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.MonitoriasAsignadas",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -939387378,
         "Kind": "Components.Component",
         "Name": "Frontend.Pages.Registro",
@@ -263,35 +197,68 @@
         }
       },
       {
-        "HashCode": -1022176171,
+        "HashCode": 2145553873,
         "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Login",
+        "Name": "Frontend.Pages.Usuarios",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Login"
+            "TagName": "Usuarios"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Login"
+          "Common.TypeName": "Frontend.Pages.Usuarios"
         }
       },
       {
-        "HashCode": 599136220,
+        "HashCode": 1564831477,
         "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Login",
+        "Name": "Frontend.Pages.Usuarios",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Frontend.Pages.Login"
+            "TagName": "Frontend.Pages.Usuarios"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Login",
+          "Common.TypeName": "Frontend.Pages.Usuarios",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1062151425,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.MonitoriasAsignadas",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "MonitoriasAsignadas"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.MonitoriasAsignadas"
+        }
+      },
+      {
+        "HashCode": 290557117,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.MonitoriasAsignadas",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.MonitoriasAsignadas"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.MonitoriasAsignadas",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -325,59 +292,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Frontend.App",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 2053123514,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Shared.SurveyPrompt",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Shared.SurveyPrompt"
-        }
-      },
-      {
-        "HashCode": 1302121694,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Shared.SurveyPrompt",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -544,6 +458,39 @@
         }
       },
       {
+        "HashCode": -1850697712,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Shared.NavMenuMonitor",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenuMonitor"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Shared.NavMenuMonitor"
+        }
+      },
+      {
+        "HashCode": -696574920,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Shared.NavMenuMonitor",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Shared.NavMenuMonitor"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Shared.NavMenuMonitor",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -1929977469,
         "Kind": "Components.Component",
         "Name": "Frontend.Shared.NavMenuUser",
@@ -577,35 +524,55 @@
         }
       },
       {
-        "HashCode": -1850697712,
+        "HashCode": 2053123514,
         "Kind": "Components.Component",
-        "Name": "Frontend.Shared.NavMenuMonitor",
+        "Name": "Frontend.Shared.SurveyPrompt",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "NavMenuMonitor"
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Shared.NavMenuMonitor"
+          "Common.TypeName": "Frontend.Shared.SurveyPrompt"
         }
       },
       {
-        "HashCode": -696574920,
+        "HashCode": 1302121694,
         "Kind": "Components.Component",
-        "Name": "Frontend.Shared.NavMenuMonitor",
+        "Name": "Frontend.Shared.SurveyPrompt",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Frontend.Shared.NavMenuMonitor"
+            "TagName": "Frontend.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Shared.NavMenuMonitor",
+          "Common.TypeName": "Frontend.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

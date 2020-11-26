@@ -56,7 +56,7 @@
 				</header>
 				<main>
 					<section class="horario">
-						<h1>Horario</h1>
+						<h1>Monitorias asignadas</h1>
             @if (loading == false){
 						@foreach (var item in monitorias)
 								{
@@ -112,7 +112,7 @@
   			var aux = await localStorage.GetItemAsync<string>("token");
 				if(aux == null){
 					loadingToken = false;
-					NavigationManager.NavigateTo("/login");
+					NavigationManager.NavigateTo("/");
 				}else{
 					loadingToken = false;
 					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );

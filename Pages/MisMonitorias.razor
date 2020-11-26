@@ -64,25 +64,6 @@
 										<br><br>
 										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
 									</div>
-									<div class="add-monitoria__item">
-									<div>
-									<h3 class="add-monitoria__item__title">
-									@item.Name
-									</h3>
-									<br>
-									<p>
-										@item.faculty
-									</p>
-									<p><strong>Día: </strong>@item.day</p>
-									<p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
-									<p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
-									<p><strong>Sala: </strong>@item.livingRoom</p>
-									<p><strong>Cupos: </strong>@item.initialQuotas</p>
-									</div>
-									<div class="flex-center">
-											<button class="form-monitoria__button modalMonitor" @onclick="@(() => openModal(item.Id))">Ver monitoria</button>
-									</div>
-									</div>
 								}
 								}
 							</div>
@@ -214,7 +195,7 @@
   			var aux = await localStorage.GetItemAsync<string>("token");
 				if(aux == null){
 					loadingToken = false;
-					NavigationManager.NavigateTo("/login");
+					NavigationManager.NavigateTo("/");
 				}else{
 					loadingToken = false;
 					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );

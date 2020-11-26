@@ -401,3 +401,5 @@ C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\RazorDecl
 C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\Razor\Shared\Nav.razor.g.cs
 C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MonitoriasAsignadas.razor.g.cs
 C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\Razor\Pages\MonitoriasAsignadas.razor.g.cs
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll

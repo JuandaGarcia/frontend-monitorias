@@ -135,7 +135,7 @@ string[] students =  new List<string>().ToArray();
   			var aux = await localStorage.GetItemAsync<string>("token");
 				if(aux == null){
 					loadingToken = false;
-					NavigationManager.NavigateTo("/login");
+					NavigationManager.NavigateTo("/");
 				}else{
 					loadingToken = false;
 					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );
