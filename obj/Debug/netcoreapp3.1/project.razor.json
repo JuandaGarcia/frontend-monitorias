@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Frontend.csproj",
+  "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Frontend.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -12,18 +12,29 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
+<<<<<<< HEAD
         "HashCode": -2105323887,
         "Kind": "Components.Component",
         "Name": "Frontend.Pages.Monitorias",
+=======
+        "HashCode": 341140486,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Counter",
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
+<<<<<<< HEAD
             "TagName": "Monitorias"
+=======
+            "TagName": "Counter"
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
+<<<<<<< HEAD
           "Common.TypeName": "Frontend.Pages.Monitorias"
         }
       },
@@ -31,32 +42,7 @@
         "HashCode": 67119220,
         "Kind": "Components.Component",
         "Name": "Frontend.Pages.Monitorias",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Pages.Monitorias"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Monitorias",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 341140486,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Counter",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
+=======
           "Common.TypeName": "Frontend.Pages.Counter"
         }
       },
@@ -64,16 +50,106 @@
         "HashCode": 835901596,
         "Kind": "Components.Component",
         "Name": "Frontend.Pages.Counter",
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
+<<<<<<< HEAD
+            "TagName": "Frontend.Pages.Monitorias"
+=======
             "TagName": "Frontend.Pages.Counter"
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
+<<<<<<< HEAD
+          "Common.TypeName": "Frontend.Pages.Monitorias",
+=======
           "Common.TypeName": "Frontend.Pages.Counter",
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+<<<<<<< HEAD
+        "HashCode": 341140486,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Counter",
+=======
+        "HashCode": 2092751565,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.EditarMonitoria",
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+<<<<<<< HEAD
+            "TagName": "Counter"
+=======
+            "TagName": "EditarMonitoria"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+<<<<<<< HEAD
+          "Common.TypeName": "Frontend.Pages.Counter"
+        }
+      },
+      {
+        "HashCode": 835901596,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Counter",
+=======
+          "Common.TypeName": "Frontend.Pages.EditarMonitoria"
+        }
+      },
+      {
+        "HashCode": 614773753,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.EditarMonitoria",
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+<<<<<<< HEAD
+            "TagName": "Frontend.Pages.Counter"
+=======
+            "TagName": "Frontend.Pages.EditarMonitoria"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+<<<<<<< HEAD
+          "Common.TypeName": "Frontend.Pages.Counter",
+=======
+          "Common.TypeName": "Frontend.Pages.EditarMonitoria",
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -111,18 +187,29 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 1135285378,
         "Kind": "Components.Component",
         "Name": "Frontend.Pages.CrearMonitorias",
+=======
+        "HashCode": 1994279576,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Store",
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
+<<<<<<< HEAD
             "TagName": "CrearMonitorias"
+=======
+            "TagName": "Store"
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
+<<<<<<< HEAD
           "Common.TypeName": "Frontend.Pages.CrearMonitorias"
         }
       },
@@ -130,69 +217,33 @@
         "HashCode": 1074532362,
         "Kind": "Components.Component",
         "Name": "Frontend.Pages.CrearMonitorias",
+=======
+          "Common.TypeName": "Frontend.Pages.Store"
+        }
+      },
+      {
+        "HashCode": -2022693373,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.Store",
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
+<<<<<<< HEAD
             "TagName": "Frontend.Pages.CrearMonitorias"
+=======
+            "TagName": "Frontend.Pages.Store"
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
+<<<<<<< HEAD
           "Common.TypeName": "Frontend.Pages.CrearMonitorias",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 2092751565,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.EditarMonitoria",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "EditarMonitoria"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Id"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.EditarMonitoria"
-        }
-      },
-      {
-        "HashCode": 614773753,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.EditarMonitoria",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Pages.EditarMonitoria"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Id",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Id"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.EditarMonitoria",
+=======
+          "Common.TypeName": "Frontend.Pages.Store",
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -230,6 +281,39 @@
         }
       },
       {
+        "HashCode": 1135285378,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.CrearMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "CrearMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.CrearMonitorias"
+        }
+      },
+      {
+        "HashCode": 1074532362,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.CrearMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.CrearMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.CrearMonitorias",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -939387378,
         "Kind": "Components.Component",
         "Name": "Frontend.Pages.Registro",
@@ -263,7 +347,44 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 2053123514,
+=======
+        "HashCode": 440888153,
+        "Kind": "Components.Component",
+        "Name": "Frontend.App",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.App"
+        }
+      },
+      {
+        "HashCode": -792464467,
+        "Kind": "Components.Component",
+        "Name": "Frontend.App",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1819147346,
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
         "Kind": "Components.Component",
         "Name": "Frontend.Shared.SurveyPrompt",
         "AssemblyName": "Frontend",
@@ -316,6 +437,7 @@
         }
       },
       {
+<<<<<<< HEAD
         "HashCode": 183801651,
         "Kind": "Components.Component",
         "Name": "Frontend.Shared.NavMenu",
@@ -350,6 +472,9 @@
       },
       {
         "HashCode": 1819147346,
+=======
+        "HashCode": 2053123514,
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
         "Kind": "Components.Component",
         "Name": "Frontend.Shared.MainLayout",
         "AssemblyName": "Frontend",
@@ -445,35 +570,35 @@
         }
       },
       {
-        "HashCode": 440888153,
+        "HashCode": 183801651,
         "Kind": "Components.Component",
-        "Name": "Frontend.App",
+        "Name": "Frontend.Shared.NavMenu",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "NavMenu"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.App"
+          "Common.TypeName": "Frontend.Shared.NavMenu"
         }
       },
       {
-        "HashCode": -792464467,
+        "HashCode": 1712394633,
         "Kind": "Components.Component",
-        "Name": "Frontend.App",
+        "Name": "Frontend.Shared.NavMenu",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Frontend.App"
+            "TagName": "Frontend.Shared.NavMenu"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.App",
+          "Common.TypeName": "Frontend.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -14858,73 +14983,73 @@
   "RootNamespace": "Frontend",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Login.razor",
-      "TargetPath": "Pages\\Login.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Monitorias.razor",
-      "TargetPath": "Pages\\Monitorias.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Registro.razor",
-      "TargetPath": "Pages\\Registro.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Shared\\NavMenu.razor",
-      "TargetPath": "Shared\\NavMenu.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\App.razor",
-      "TargetPath": "App.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\_Imports.razor",
-      "TargetPath": "_Imports.razor",
-      "FileKind": "componentImport"
-    },
-    {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Store.razor",
-      "TargetPath": "Pages\\Store.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\_Host.cshtml",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\_Host.cshtml",
       "TargetPath": "Pages\\_Host.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Shared\\MainLayout.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\App.razor",
+      "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Registro.razor",
+      "TargetPath": "Pages\\Registro.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\MainLayout.razor",
       "TargetPath": "Shared\\MainLayout.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
-      "FileKind": "mvc"
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Monitorias.razor",
+      "TargetPath": "Pages\\Monitorias.razor",
+      "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\CrearMonitorias.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Counter.razor",
+      "TargetPath": "Pages\\Counter.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\NavMenu.razor",
+      "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\CrearMonitorias.razor",
       "TargetPath": "Pages\\CrearMonitorias.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\EditarMonitoria.razor",
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\EditarMonitoria.razor",
       "TargetPath": "Pages\\EditarMonitoria.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Login.razor",
+      "TargetPath": "Pages\\Login.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\_Imports.razor",
+      "TargetPath": "_Imports.razor",
+      "FileKind": "componentImport"
+    },
+    {
+      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Store.razor",
+      "TargetPath": "Pages\\Store.razor",
       "FileKind": "component"
     }
   ],

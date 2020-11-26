@@ -3,6 +3,11 @@
 @using System.Net.Http.Json
 @inject HttpClient Http
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
+
+	@if(loadingToken){
+		<div></div>
+	}else{
 
   <div class="mainLayout">
 		@if (modal == true){
@@ -50,7 +55,10 @@
               	@item.faculty
 							</div>
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
           }else{
             <div>loading...</div>
           }
@@ -58,9 +66,11 @@
         </main>
 			</div>
 		</div>
+	}
 
 @code {
   public bool loading = true;
+  bool loadingToken = true;
   public bool modal = false;
   public string currentId = "";
   public string[] token;
@@ -73,13 +83,35 @@
     PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase,
     PropertyNameCaseInsensitive = true,
   };
+
+	protected async override Task OnAfterRenderAsync(bool firstRender)    
+	{
+		if (firstRender)
+    {
+  			var aux = await localStorage.GetItemAsync<string>("token");
+				if(aux == null){
+					loadingToken = false;
+					NavigationManager.NavigateTo("/login");
+				}else{
+					loadingToken = false;
+        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
+        	monitorias = httpResponse;
+        	loading = false;
+				}
+    }
+		StateHasChanged();
+	}
   
   protected override async Task OnInitializedAsync()
     {
+<<<<<<< HEAD
         var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
         monitorias = httpResponse;
         loading = false;
 		
+=======
+				
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2
 
     }
 

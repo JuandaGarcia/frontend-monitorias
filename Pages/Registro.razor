@@ -3,6 +3,7 @@
 @using System.Net.Http.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
+@inject Blazored.LocalStorage.ILocalStorageService localStore
 
 <main class="loginRegister">
 	<section class="loginRegister__formSection">
@@ -64,10 +65,15 @@
 		var response = await Http.PostAsJsonAsync("http://localhost:8080/api/usuarios/register", postBody);
 
 		var responseString = await response.Content.ReadFromJsonAsync<responseData>();
+		
 
 		if (responseString.error == "")
 		{
-			NavigationManager.NavigateTo("/monitorias");
+			if (responseString.token != null)
+    	{
+				await localStore.SetItemAsync("token", responseString.token);
+				NavigationManager.NavigateTo("/monitorias");
+    	}
 		}
 		else
 		{

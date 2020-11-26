@@ -310,5 +310,20 @@ C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp
 C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
+<<<<<<< HEAD
 C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\catic\Documents\proyectos\.Net\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+=======
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Blazored.LocalStorage.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
+>>>>>>> 9e1b7f7ea0fb7a5d29ed05545a9ca7ffaefd03c2

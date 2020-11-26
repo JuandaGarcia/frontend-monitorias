@@ -7,6 +7,11 @@
 @inject NavigationManager NavigationManager
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
+
+@if(loadingToken) {
+	<div></div>
+}else {
+
 <main class="loginRegister">
 	<section class="loginRegister__formSection">
 		<img class="loginRegister__logo" src="/img/logo.png" alt="Logo" />
@@ -33,16 +38,33 @@
 		<img class="loginRegister__imageSection__img" src="/img/login-register/students.png" alt="Estudiantes" />
 	</section>
 </main>
+}
 
 @code {
 	private string mail;
 	private string password;
 	private string error;
+	public bool loadingToken = true;
 
 	public class responseData
 	{
 		public string token { get; set; }
 		public string error { get; set; }
+	}
+
+	protected async override Task OnAfterRenderAsync(bool firstRender)    
+	{
+		if (firstRender)
+    {
+    var aux = await localStorage.GetItemAsync<string>("token");
+				if(aux == null){
+					loadingToken = false;
+				}else{
+					loadingToken = false;
+					NavigationManager.NavigateTo("/monitorias");
+				}
+		}
+		StateHasChanged();
 	}
 
 	private void OnPasswordChanged(ChangeEventArgs e)
