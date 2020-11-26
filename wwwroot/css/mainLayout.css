@@ -247,6 +247,13 @@
 	color: white;
 }
 
+.reset-button {
+	border: none;
+	background: none;
+	outline: none;
+	cursor: pointer;
+}
+
 @keyframes fadeUp {
 	from {
 		opacity: 0;

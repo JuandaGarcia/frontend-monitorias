@@ -1,0 +1,24 @@
+﻿@inject NavigationManager NavigationManager
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+
+<div class="mainLayout__navPanel">
+				<div class="mainLayout__navPanel__user">
+					<img
+						class="mainLayout__navPanel__img"
+						src="/img/perfil.svg"
+						alt="Perfil"
+					/>
+					<div>
+						
+					</div>
+				</div>
+				
+			</div>
+
+@code {
+	public async void logOut()
+	{
+    await LocalStorage.RemoveItemAsync("token");
+		NavigationManager.NavigateTo("/login");
+	}
+}

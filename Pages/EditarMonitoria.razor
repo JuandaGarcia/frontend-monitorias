@@ -2,7 +2,24 @@
 @using System.Net.Http
 @using System.Net.Http.Json
 @inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
 
+@if(loadingToken){
+		<div class="mainLayout">
+		<Nav />
+			<div class="mainLayout__container">
+				<header class="mainLayout__container__header">
+					<div class="mainLayout__container__header__gradient">
+						<h1 class="color-white">Sistema de monitorias</h1>
+						<span class="color-white">Universidad Santiago de Cali</span>
+					</div>
+				</header>
+				<main>
+				</main>
+			</div>
+		</div>
+	}else{
 
 <div class="mainLayout">
 			<NavMenu/>
@@ -89,7 +106,7 @@
         </main>
 			</div>
 		</div>
-
+	}
 @code {
   [Parameter]
   public string Id { get; set; }
@@ -101,6 +118,8 @@
   private DateTime end;
 	public bool success = false;
 	public bool error = false;
+	bool loadingToken = true;
+	Usuario usuario { get; set; }
 
   private static readonly System.Text.Json.JsonSerializerOptions s_options = 
     new System.Text.Json.JsonSerializerOptions() 
@@ -124,6 +143,28 @@
 			}
 	
     }
+
+	protected async override Task OnAfterRenderAsync(bool firstRender)    
+	{
+		if (firstRender)
+    {
+  			var aux = await localStorage.GetItemAsync<string>("token");
+				if(aux == null){
+					loadingToken = false;
+					NavigationManager.NavigateTo("/login");
+				}else{
+					loadingToken = false;
+					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );
+					usuario = httpResponseUser; 
+					if (usuario.roll != 1)
+					{
+							NavigationManager.NavigateTo("/monitorias");
+					}
+        	loading = false;
+				}
+    }
+		StateHasChanged();
+	}
   
   protected override async Task OnInitializedAsync()
     {

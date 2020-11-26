@@ -6,7 +6,19 @@
 @inject NavigationManager NavigationManager
 
 	@if(loadingToken){
-		<div></div>
+		<div class="mainLayout">
+		<Nav />
+			<div class="mainLayout__container">
+				<header class="mainLayout__container__header">
+					<div class="mainLayout__container__header__gradient">
+						<h1 class="color-white">Sistema de monitorias</h1>
+						<span class="color-white">Universidad Santiago de Cali</span>
+					</div>
+				</header>
+				<main>
+				</main>
+			</div>
+		</div>
 	}else{
 
   <div class="mainLayout">
@@ -14,6 +26,20 @@
 			<div class="modal">
 					<div class="modal__container">
 						<button @onclick="closeModal" class="modal__container__exit"></button>
+						@if(currentModal == "removestudent") {
+						<p>¿Quieres eliminar esta monitoria?</p>
+						<div>
+							<button @onclick="closeModal" class="modal__container__button">
+								Cancelar
+							</button>
+							<button
+								class="modal__container__button modal__container__button--red"
+								@onclick="removestudent"
+							>
+								Eliminar
+							</button>
+						</div>
+						}
 						@if(currentModal == "delete") {
 						<p>¿Quieres eliminar esta monitoria?</p>
 						<div>
@@ -49,8 +75,14 @@
 			@if (loading == false){
 			@if(usuario.roll==1){
 			<NavMenu />
-			}else{
-			<NavMenuUser />
+			}
+			@if (usuario.roll==2)
+			{
+			<NavMenuMonitor />	
+			}
+			@if (usuario.roll==3)
+			{
+			<NavMenuUser />		
 			}
 			}
 			<div class="mainLayout__container">
@@ -62,6 +94,9 @@
 				</header>
 				<main>
 					<div class="monitorias">
+						@if(usuario.roll == 1){
+						<a class="form-monitoria__button monitorias" href="/nueva-monitoria">Crear una monitoria</a>
+						}
           @if (loading == false){
             @foreach (var item in monitorias)
             {
@@ -119,6 +154,8 @@
 						if (!isStudent)
 						{
 							<button class="form-monitoria__button modalMonitor" @onclick="@(() => openModal(item.Id, "addstudent"))">Apuntarse</button>
+						}else{
+							<button class="form-monitoria__button modalMonitor red" @onclick="@(() => openModal(item.Id, "removestudent"))">Salir de esta monitoria</button>
 						}
 						}
 					</div>
@@ -191,6 +228,11 @@
 		closeModal();
 	}
 
+	private async Task removestudent(){
+		var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/removestudent/"+currentId+"/"+usuario.Id, s_options);
+		monitorias = httpResponse;
+		closeModal();
+	}
 	private async Task eliminarMonitoria(){
 		var httpResponse = await Http.DeleteAsync("http://localhost:8080/api/monitorias/"+currentId);
 		monitorias = await httpResponse.Content.ReadFromJsonAsync<Monitoria[]>();

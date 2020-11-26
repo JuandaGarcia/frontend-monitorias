@@ -6,7 +6,19 @@
 @inject NavigationManager NavigationManager
 
 	@if(loadingToken){
-		<div></div>
+		<div class="mainLayout">
+		<Nav />
+			<div class="mainLayout__container">
+				<header class="mainLayout__container__header">
+					<div class="mainLayout__container__header__gradient">
+						<h1 class="color-white">Sistema de monitorias</h1>
+						<span class="color-white">Universidad Santiago de Cali</span>
+					</div>
+				</header>
+				<main>
+				</main>
+			</div>
+		</div>
 	}else{
 
   <div class="mainLayout">
@@ -14,39 +26,20 @@
 			<div class="modal">
 					<div class="modal__container">
 						<button @onclick="closeModal" class="modal__container__exit"></button>
-						@if(currentModal == "delete") {
-						<p>¿Quieres eliminar esta monitoria?</p>
 						<div>
-							<button @onclick="closeModal" class="modal__container__button">
-								Cancelar
-							</button>
-							<button
-								class="modal__container__button modal__container__button--red"
-								@onclick="eliminarMonitoria"
-							>
-								Eliminar
-							</button>
 						</div>
-						}
-						@if(currentModal == "addstudent") {
-						<p>¿Quieres asistir a esta monitoria?</p>
-						<div>
-							<button @onclick="closeModal" class="modal__container__button">
-								Cancelar
-							</button>
-							<button
-								class="modal__container__button modal__container__button--red"
-								@onclick="addStudent"
-							>
-								Inscribir
-							</button>
-						</div>
-						}
 					</div>
 				<div @onclick="closeModal" class="modal__overlay"></div>
 			</div>
 		}
-			<NavMenu />
+			@if (usuario.roll==2)
+			{
+			<NavMenuMonitor />	
+			}
+			@if (usuario.roll==3)
+			{
+			<NavMenuUser />		
+			}
 			<div class="mainLayout__container">
 				<header class="mainLayout__container__header">
 					<div class="mainLayout__container__header__gradient">
@@ -64,12 +57,31 @@
 								var lunes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Lunes");
 								@foreach (var item in lunes)
 								{
-									<div class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
 										<br><br>
 										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
+									</div>
+									<div class="add-monitoria__item">
+									<div>
+									<h3 class="add-monitoria__item__title">
+									@item.Name
+									</h3>
+									<br>
+									<p>
+										@item.faculty
+									</p>
+									<p><strong>Día: </strong>@item.day</p>
+									<p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
+									<p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
+									<p><strong>Sala: </strong>@item.livingRoom</p>
+									<p><strong>Cupos: </strong>@item.initialQuotas</p>
+									</div>
+									<div class="flex-center">
+											<button class="form-monitoria__button modalMonitor" @onclick="@(() => openModal(item.Id))">Ver monitoria</button>
+									</div>
 									</div>
 								}
 								}
@@ -80,7 +92,7 @@
 								var martes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Martes");
 								@foreach (var item in martes)
 								{
-									<div class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -96,7 +108,7 @@
 								var miercoles = new List<Monitoria>(monitorias).FindAll(e => e.day == "Miércoles");
 								@foreach (var item in miercoles)
 								{
-									<div class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -112,7 +124,7 @@
 								var jueves = new List<Monitoria>(monitorias).FindAll(e => e.day == "Jueves");
 								@foreach (var item in jueves)
 								{
-									<div class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -128,7 +140,7 @@
 								var viernes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Viernes");
 								@foreach (var item in viernes)
 								{
-									<div class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -144,7 +156,7 @@
 								var sabado = new List<Monitoria>(monitorias).FindAll(e => e.day == "Sábado");
 								@foreach (var item in sabado)
 								{
-									<div class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -160,7 +172,7 @@
 								var domingo = new List<Monitoria>(monitorias).FindAll(e => e.day == "Domingo");
 								@foreach (var item in domingo)
 								{
-									<div class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -207,7 +219,11 @@
 					loadingToken = false;
 					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );
 					usuario = httpResponseUser; 
-        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/list/"+usuario.Id, s_options);
+					if (usuario.roll == 1)
+					{
+							NavigationManager.NavigateTo("/monitorias");
+					}
+        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/monitor/"+usuario.Id, s_options);
         	monitorias = httpResponse;
         	loading = false;
 				}
@@ -215,9 +231,8 @@
 		StateHasChanged();
 	}
 
-	private void openModal(string id, string typeModal)
+	private void openModal(string id)
     {
-				currentModal = typeModal;
 				currentId = id;
         modal = true;
     }
