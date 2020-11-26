@@ -1,7 +1,12 @@
 @page "/nueva-monitoria" 
 @using System.Net.Http
 @inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
 
+@if(loadingToken){
+		<div></div>
+	}else{
 <div class="mainLayout">
 			<NavMenu/>
 			<div class="mainLayout__container">
@@ -58,6 +63,7 @@
         </main>
 			</div>
 		</div>
+	}
 
 @code {
   private string name;
@@ -68,6 +74,23 @@
   private string livingRoom;
   private string initialQuotas;
   private string description;
+  bool loadingToken = true;
+
+
+	protected async override Task OnAfterRenderAsync(bool firstRender)    
+	{
+		if (firstRender)
+    {
+  			var aux = await localStorage.GetItemAsync<string>("token");
+				if(aux == null){
+					loadingToken = false;
+					NavigationManager.NavigateTo("/login");
+				}else{
+					loadingToken = false;
+				}
+    }
+		StateHasChanged();
+	}
 
   private async Task sendData()
     {
