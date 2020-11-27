@@ -65,12 +65,21 @@
 										{
 												<span>No hay comentarios disponibles</span>
 										}else {
-											@foreach (var item in commets)
-											{
-												<div>
-													<span>@item.description</span>
-													<button @onclick="@(() => removeComment(item.Id, misMonitorias.Id))" class="monitorias__item__button trash"></button>
-												</div>
+											@if(usuario.Id == misMonitorias.monitor){
+												@foreach (var item in commets)
+												{
+													<div>
+														<span>@item.description</span>
+														<button @onclick="@(() => removeComment(item.Id, misMonitorias.Id))" class="monitorias__item__button trash"></button>
+													</div>
+												}
+											}else{
+												@foreach (var item in commets)
+												{
+													<div>
+														<span>@item.description</span>
+													</div>
+												}
 											}
 										}
 										}
@@ -105,6 +114,7 @@
 								var lunes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Lunes");
 								@foreach (var item in lunes)
 								{
+									@if(item.monitor != ""){
 									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
@@ -112,6 +122,7 @@
 										<br><br>
 										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
 									</div>
+									}
 								}
 								}
 							</div>
@@ -121,6 +132,7 @@
 								var martes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Martes");
 								@foreach (var item in martes)
 								{
+									@if(item.monitor != ""){
 									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
@@ -128,6 +140,7 @@
 										<br><br>
 										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
 									</div>
+									}
 								}
 								}
 							</div>
@@ -137,6 +150,7 @@
 								var miercoles = new List<Monitoria>(monitorias).FindAll(e => e.day == "Miércoles");
 								@foreach (var item in miercoles)
 								{
+									@if(item.monitor != ""){
 									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
@@ -144,6 +158,7 @@
 										<br><br>
 										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
 									</div>
+									}
 								}
 								}
 							</div>
@@ -153,6 +168,7 @@
 								var jueves = new List<Monitoria>(monitorias).FindAll(e => e.day == "Jueves");
 								@foreach (var item in jueves)
 								{
+									@if(item.monitor != ""){
 									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
@@ -160,6 +176,7 @@
 										<br><br>
 										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
 									</div>
+									}
 								}
 								}
 							</div>
@@ -169,6 +186,7 @@
 								var viernes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Viernes");
 								@foreach (var item in viernes)
 								{
+									@if(item.monitor != ""){
 									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
@@ -176,6 +194,7 @@
 										<br><br>
 										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
 									</div>
+									}
 								}
 								}
 							</div>
@@ -185,6 +204,7 @@
 								var sabado = new List<Monitoria>(monitorias).FindAll(e => e.day == "Sábado");
 								@foreach (var item in sabado)
 								{
+									@if(item.monitor != ""){
 									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
@@ -192,6 +212,7 @@
 										<br><br>
 										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
 									</div>
+									}
 								}
 								}
 							</div>
@@ -201,6 +222,7 @@
 								var domingo = new List<Monitoria>(monitorias).FindAll(e => e.day == "Domingo");
 								@foreach (var item in domingo)
 								{
+									@if(item.monitor != ""){
 									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
@@ -208,6 +230,7 @@
 										<br><br>
 										<span class="horario__item__text">@DateTime.Parse(item.end).ToShortTimeString() - @DateTime.Parse(item.end).ToShortTimeString()</span>
 									</div>
+									}
 								}
 								}
 							</div>

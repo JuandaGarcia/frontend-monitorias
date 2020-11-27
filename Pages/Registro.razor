@@ -1,6 +1,8 @@
 @page "/register"
 @using System.Net.Http
 @using System.Net.Http.Json
+@using System.Text
+@using Newtonsoft.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject Blazored.LocalStorage.ILocalStorageService localStore
@@ -26,7 +28,17 @@
 			</select>
 			<input placeholder="Correo" class="loginRegister__input" type="email" @bind="mail" />
 			<input placeholder="Contraseña" class="loginRegister__input" type="password" @bind="password" />
-			<button class="loginRegister__button" type="button" @onclick="@sendData">Registrarse</button>
+			<p>@_error</p>
+			@if (loadingAuth)
+			 {
+				<button class="loginRegister__button" type="button">
+				<div class="loader__container">
+					<div class="loader"></div>
+				</div>
+				</button>	 
+			 }else {
+				<button class="loginRegister__button" type="button" @onclick="@sendData">Registrarse</button>
+			 }
 			<p class="loginRegister__question">
 				¿Ya tienes cuenta?
 				<a class="loginRegister__question__a" href="/"> Inicia Sesión </a>
@@ -49,6 +61,7 @@
 	private string code;
 	private string id;
 	private string password;
+	public bool loadingAuth = false;
 
 	private string _error = "";
 
@@ -58,13 +71,19 @@
 		public string error { get; set; }
 	}
 
-
 	private async void sendData()
 	{
+		loadingAuth = true;
 		var postBody = new { name = name, code = code, career = career, mail = mail, password = password, roll = 3 };
-		var response = await Http.PostAsJsonAsync("http://localhost:8080/api/usuarios/register", postBody);
+
+
+		var response = await Http.PostAsync("http://localhost:8080/api/usuarios/register/", new
+			StringContent(JsonConvert.SerializeObject(postBody), Encoding.UTF8, "application/json"));
 
 		var responseString = await response.Content.ReadFromJsonAsync<responseData>();
+		loadingAuth = false;
+
+
 
 
 		if (responseString.error == "")
@@ -79,5 +98,7 @@
 		{
 			_error = responseString.error;
 		}
+
+
 	}
 }
