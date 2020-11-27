@@ -10,6 +10,9 @@ Este proyecto sirve para llevar un control de las monitorias de la Universidad S
 - Juan David García Rincón
 
 ## Explicación Técnica
+Esta aplicación de monitorias en la parte del back end se desarrolló una WebApi con MongoDB y se tiene unos modelos con unos atributos requeridos para guardar y validar la información en la base de datos. También se desarrolló controladores para configurar las peticiones http (get, post, put, delete) que se solicitan desde el front end. Y se creó unos servicios para conectarse con la base de datos. 
+En el front end de esta aplicación se utilizó Blazor para desarrollar una SPA “single-page-application” y basar la aplicación en componentes para tener un mejor rendimiento. También se utilizó la librería System.Net.Http.Json en la versión 3.2.1 para realizar las consultas http de la API desde el front end.
+
 ![monitorias](https://firebasestorage.googleapis.com/v0/b/files-f91c4.appspot.com/o/Frame%206.png?alt=media&token=fe82f14a-75a3-4ad5-ab12-e08a9907342c)
 
 ## Pasos para correr el proyecto:
