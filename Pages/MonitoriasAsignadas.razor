@@ -1,0 +1,220 @@
+@page "/monitorias-asignadas";
+@using System.Net.Http
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager NavigationManager
+
+	@if(loadingToken){
+		<div class="mainLayout">
+		<Nav />
+			<div class="mainLayout__container">
+				<header class="mainLayout__container__header">
+					<div class="mainLayout__container__header__gradient">
+						<h1 class="color-white">Sistema de monitorias</h1>
+						<span class="color-white">Universidad Santiago de Cali</span>
+					</div>
+				</header>
+				<main>
+				</main>
+			</div>
+		</div>
+	}else{
+
+  <div class="mainLayout">
+		@if (modal == true){
+			<div class="modal">
+					<div class="modal__container">
+						<button @onclick="closeModal" class="modal__container__exit"></button>
+						<div class="modal__see">
+              		<div>
+                  <h3 class="add-monitoria__item__title">
+                  @monitoriaModal.Name
+                  </h3>
+                  <br>
+                  <p>
+                    @monitoriaModal.faculty
+                  </p>
+                  <p><strong>Día: </strong>@monitoriaModal.day</p>
+                  <p><strong>Hora de inicio: </strong>@DateTime.Parse(monitoriaModal.init).ToShortTimeString()</p>
+                  <p><strong>Hora de Fin: </strong>@DateTime.Parse(monitoriaModal.end).ToShortTimeString()</p>
+                  <p><strong>Sala: </strong>@monitoriaModal.livingRoom</p>
+                  <p><strong>Cupos: </strong>@monitoriaModal.initialQuotas</p>
+                  </div>
+									@if (monitoriaModal.monitor == usuario.Id)
+									{
+									<br>
+									<hr>
+									<br>
+									<form @onsubmit="@(() => sendComment(monitoriaModal.Id))">
+										<textarea class="form-monitoria__input text-area long" @bind="textComment" required placeholder="Descripción" cols="30" rows="5"></textarea>
+										<button class="form-monitoria__button comment" type="submit">Publicar</button>
+									</form>
+									}
+									<br>
+									<hr>
+									<br>
+									<div>
+										@if (loadingComments)
+										{
+												<span>Cargando...</span>
+										}else{
+										@if (commets.Length == 0)
+										{
+												<span>No hay comentarios disponibles</span>
+										}else {
+											@foreach (var item in commets)
+											{
+												<div>
+													<span>@item.description</span>
+													<button @onclick="@(() => removeComment(item.Id, monitoriaModal.Id))" class="monitorias__item__button trash"></button>
+												</div>
+											}
+										}
+										}
+									</div>
+						</div>
+					</div>
+				<div @onclick="closeModal" class="modal__overlay"></div>
+			</div>
+		}
+			<NavMenuMonitor />
+			<div class="mainLayout__container">
+				<header class="mainLayout__container__header">
+					<div class="mainLayout__container__header__gradient">
+						<h1 class="color-white">Sistema de monitorias</h1>
+						<span class="color-white">Universidad Santiago de Cali</span>
+					</div>
+				</header>
+				<main>
+					<section class="horario">
+						<h1>Monitorias asignadas</h1>
+            @if (loading == false){
+						@foreach (var item in monitorias)
+								{
+                  <div class="add-monitoria__item">
+                  <div>
+                  <h3 class="add-monitoria__item__title">
+                  @item.Name
+                  </h3>
+                  <br>
+                  <p>
+                    @item.faculty
+                  </p>
+                  <p><strong>Día: </strong>@item.day</p>
+                  <p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
+                  <p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
+                  <p><strong>Sala: </strong>@item.livingRoom</p>
+                  <p><strong>Cupos: </strong>@item.initialQuotas</p>
+                  </div>
+                  <div class="flex-center">
+                      <button class="form-monitoria__button modalMonitor" @onclick="@(() => openModal(item))">Ver monitoria</button>
+                  </div>
+                  </div>
+								}
+            }
+					</section>
+        </main>
+			</div>
+		</div>
+	}
+
+@code {
+  public bool loading = true;
+  bool loadingToken = true;
+  public bool modal = false;
+  bool loadingComments = true;
+  public string currentModal = "";
+  public string[] token;
+  private string textComment;
+  Usuario usuario { get; set; }
+	
+  Monitoria[] monitorias { get; set; }
+  Monitoria monitoriaModal { get; set; }
+  Comentario[] commets { get; set; }
+
+  private static readonly System.Text.Json.JsonSerializerOptions s_options = 
+    new System.Text.Json.JsonSerializerOptions() 
+  {
+    PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase,
+    PropertyNameCaseInsensitive = true,
+  };
+
+	protected async override Task OnAfterRenderAsync(bool firstRender)    
+	{
+		if (firstRender)
+    {
+  			var aux = await localStorage.GetItemAsync<string>("token");
+				if(aux == null){
+					loadingToken = false;
+					NavigationManager.NavigateTo("/");
+				}else{
+					loadingToken = false;
+					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );
+					usuario = httpResponseUser; 
+					if (usuario.roll != 2)
+					{
+							NavigationManager.NavigateTo("/monitorias");
+					}
+        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/monitor/"+usuario.Id, s_options);
+        	monitorias = httpResponse;
+        	loading = false;
+				}
+    }
+		StateHasChanged();
+	}
+
+	private async Task openModal(Monitoria modalMonitoria)
+    {
+				monitoriaModal = modalMonitoria;
+        modal = true;
+        await getComments(modalMonitoria.Id);
+    }
+ 	private void closeModal()
+    {
+        modal = false;
+    }
+
+    private async Task sendComment(string id)
+    {
+			var httpResponse = await Http.GetFromJsonAsync<Comentario[]>("http://localhost:8080/api/comentarios/"+id+"/"+textComment, s_options);
+    	commets = httpResponse;
+    }
+
+    private async Task removeComment(string idComment ,string idMonitoria){
+		var httpResponse = await Http.DeleteAsync("http://localhost:8080/api/comentarios/"+idComment+"/"+idMonitoria);
+		commets = await httpResponse.Content.ReadFromJsonAsync<Comentario[]>();
+	}
+
+  private async Task getComments(string id) {
+		loadingComments = true;
+		var httpResponse = await Http.GetFromJsonAsync<Comentario[]>("http://localhost:8080/api/comentarios/bymonitoria/"+id, s_options);
+    commets = httpResponse;
+		loadingComments = false;
+	}
+
+	private static string cssItem(string faculty)
+	{
+		switch (faculty)
+		{
+					case "Facultad de Ingeniería":
+              return "horario__item c1";
+          case "Facultad de Ciencias Básicas":
+              return "horario__item c2";
+          case "Facultad de Ciencias Económicas y Empresariales":
+              return "horario__item c3";
+          case "Facultad de Comunicación y Publicidad":
+              return "horario__item c4";
+          case "Facultad de Derecho":
+              return "horario__item c5";
+          case "Facultad de Educación":
+              return "horario__item c6";
+          case "Facultad de Salud":
+              return "horario__item c7";
+          default:
+              return "horario__item c1";
+		}
+	}
+
+
+}

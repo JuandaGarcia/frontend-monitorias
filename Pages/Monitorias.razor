@@ -6,7 +6,19 @@
 @inject NavigationManager NavigationManager
 
 	@if(loadingToken){
-		<div></div>
+		<div class="mainLayout">
+		<Nav />
+			<div class="mainLayout__container">
+				<header class="mainLayout__container__header">
+					<div class="mainLayout__container__header__gradient">
+						<h1 class="color-white">Sistema de monitorias</h1>
+						<span class="color-white">Universidad Santiago de Cali</span>
+					</div>
+				</header>
+				<main>
+				</main>
+			</div>
+		</div>
 	}else{
 
   <div class="mainLayout">
@@ -14,6 +26,21 @@
 			<div class="modal">
 					<div class="modal__container">
 						<button @onclick="closeModal" class="modal__container__exit"></button>
+						@if(currentModal == "removestudent") {
+						<p>¿Quieres eliminar esta monitoria?</p>
+						<div>
+							<button @onclick="closeModal" class="modal__container__button">
+								Cancelar
+							</button>
+							<button
+								class="modal__container__button modal__container__button--red"
+								@onclick="removestudent"
+							>
+								Eliminar
+							</button>
+						</div>
+						}
+						@if(currentModal == "delete") {
 						<p>¿Quieres eliminar esta monitoria?</p>
 						<div>
 							<button @onclick="closeModal" class="modal__container__button">
@@ -26,11 +53,38 @@
 								Eliminar
 							</button>
 						</div>
+						}
+						@if(currentModal == "addstudent") {
+						<p>¿Quieres asistir a esta monitoria?</p>
+						<div>
+							<button @onclick="closeModal" class="modal__container__button">
+								Cancelar
+							</button>
+							<button
+								class="modal__container__button modal__container__button--blue"
+								@onclick="addStudent"
+							>
+								Inscribir
+							</button>
+						</div>
+						}
 					</div>
 				<div @onclick="closeModal" class="modal__overlay"></div>
 			</div>
 		}
-			<NavMenu/>
+			@if (loading == false){
+			@if(usuario.roll==1){
+			<NavMenu />
+			}
+			@if (usuario.roll==2)
+			{
+			<NavMenuMonitor />	
+			}
+			@if (usuario.roll==3)
+			{
+			<NavMenuUser />		
+			}
+			}
 			<div class="mainLayout__container">
 				<header class="mainLayout__container__header">
 					<div class="mainLayout__container__header__gradient">
@@ -40,20 +94,75 @@
 				</header>
 				<main>
 					<div class="monitorias">
+						@if(usuario.roll == 1){
+						<a class="form-monitoria__button monitorias" href="/nueva-monitoria">Crear una monitoria</a>
+						}
           @if (loading == false){
             @foreach (var item in monitorias)
             {
-							<div class="monitorias__item">
+				if(usuario.roll == 1){
+					<div class="monitorias__item">
 								<div class="monitorias__item__header">
 									<h2>@item.Name</h2>
 									<div>
 										<a href="/monitorias/@item.Id" class="monitorias__item__button edit"></a>
-										<button @onclick="@(() => openModal(item.Id))" class="monitorias__item__button trash"></button>
+										<button @onclick="@(() => openModal(item.Id, "delete"))" class="monitorias__item__button trash"></button>
 									</div>
 								</div>
 								<hr>
-              	@item.faculty
+								<br>
+								<p>
+              		@item.faculty
+								</p>
+								<br>
+								<p><strong>Día: </strong>@item.day</p>
+								<br>
+								<p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
+								<br>
+								<p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
+								<br>
+								<p><strong>Sala: </strong>@item.livingRoom</p>
+								<br>
+								<p><strong>Cupos: </strong>@item.initialQuotas</p>
 							</div>
+				}else{
+						
+					<div class="add-monitoria__item">
+					<div>
+					<h3 class="add-monitoria__item__title">
+					@item.Name
+					</h3>
+					<br>
+					<p>
+						@item.faculty
+					</p>
+					<p><strong>Día: </strong>@item.day</p>
+					<p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
+					<p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
+					<p><strong>Sala: </strong>@item.livingRoom</p>
+					<p><strong>Cupos: </strong>@item.initialQuotas</p>
+					</div>
+					<div class="flex-center">
+						@{bool isStudent = false;
+					
+						foreach (var idUser in item.students)
+						{
+							if (idUser == usuario.Id)
+							{
+									isStudent = true;
+							}
+						}
+						if (!isStudent)
+						{
+							<button class="form-monitoria__button modalMonitor" @onclick="@(() => openModal(item.Id, "addstudent"))">Apuntarse</button>
+						}else{
+							<button class="form-monitoria__button modalMonitor red" @onclick="@(() => openModal(item.Id, "removestudent"))">Salir de esta monitoria</button>
+						}
+						}
+					</div>
+					</div>
+				}
+							
             }
           }else{
             <div>loading...</div>
@@ -67,9 +176,13 @@
 @code {
   public bool loading = true;
   bool loadingToken = true;
+  bool loadingAvailables = false;
   public bool modal = false;
+  public string currentModal = "";
   public string currentId = "";
   public string[] token;
+	
+  Usuario usuario { get; set; }
 	
   Monitoria[] monitorias { get; set; }
 
@@ -87,25 +200,28 @@
   			var aux = await localStorage.GetItemAsync<string>("token");
 				if(aux == null){
 					loadingToken = false;
-					NavigationManager.NavigateTo("/login");
+					NavigationManager.NavigateTo("/");
 				}else{
 					loadingToken = false;
+					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );
+					usuario = httpResponseUser;
+					if (usuario.roll == 1)
+					{
         	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
         	monitorias = httpResponse;
+					}else{
+        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/availablesusers", s_options);
+        	monitorias = httpResponse;
+					}
         	loading = false;
 				}
     }
 		StateHasChanged();
 	}
-  
-  protected override async Task OnInitializedAsync()
-    {
-				
 
-    }
-
-	private void openModal(string id)
+	private void openModal(string id, string typeModal)
     {
+				currentModal = typeModal;
 				currentId = id;
         modal = true;
     }
@@ -115,6 +231,21 @@
         modal = false;
     }
 
+	private async Task addStudent() {
+		loadingAvailables= true;
+		var httpResponse = await Http.PostAsJsonAsync("http://localhost:8080/api/monitorias/"+currentId+"/"+usuario.Id, s_options);
+		monitorias = await httpResponse.Content.ReadFromJsonAsync<Monitoria[]>();
+		loadingAvailables = false;
+		closeModal();
+	}
+
+	private async Task removestudent(){
+		loadingAvailables=true;
+		var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/removestudent/"+currentId+"/"+usuario.Id, s_options);
+		monitorias = httpResponse;
+		loadingAvailables = false;
+		closeModal();
+	}
 	private async Task eliminarMonitoria(){
 		var httpResponse = await Http.DeleteAsync("http://localhost:8080/api/monitorias/"+currentId);
 		monitorias = await httpResponse.Content.ReadFromJsonAsync<Monitoria[]>();

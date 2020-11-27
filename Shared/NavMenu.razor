@@ -2,43 +2,39 @@
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 
 <div class="mainLayout__navPanel">
-				<div class="mainLayout__navPanel__user">
-					<img
-						class="mainLayout__navPanel__img"
-						src="/img/perfil.svg"
-						alt="Perfil"
-					/>
-					<div>
-						<span class="mainLayout__navPanel__username">Admin</span>
-						<br />
-						<span>USC</span>
-					</div>
-				</div>
-				<nav class="nav">
-					<ul class="nav__ul">
-						<li>
-							<a href="/monitorias" class="nav__item">
-								<span class="nav__item__text">Monitorias</span>
-							</a>
-						</li>
-						<li>
-							<a href="/" class="nav__item">
-								<span class="nav__item__text">Monitores</span>
-							</a>
-						</li>
-						<li>
-							<button @onclick="logOut" class="nav__item__logout">
-								<span class="nav__item__text--logOut">Cerrar Sesión</span>
-							</button>
-						</li>
-					</ul>
-				</nav>
-			</div>
+	<div class="mainLayout__navPanel__user">
+		<img class="mainLayout__navPanel__img" src="/img/perfil.svg" alt="Perfil" />
+		<div>
+			<span class="mainLayout__navPanel__username">Admin</span>
+			<br />
+			<span>USC</span>
+		</div>
+	</div>
+	<nav class="nav">
+		<ul class="nav__ul">
+			<li>
+				<a href="/monitorias" class="nav__item">
+					<span class="nav__item__text">Monitorias</span>
+				</a>
+			</li>
+			<li>
+				<a href="/usuarios" class="nav__item">
+					<span class="nav__item__text">Usuarios</span>
+				</a>
+			</li>
+			<li>
+				<button @onclick="logOut" class="nav__item__logout nav__item reset-button">
+					<span class="nav__item__text--logOut">Cerrar Sesión</span>
+				</button>
+			</li>
+		</ul>
+	</nav>
+</div>
 
 @code {
 	public async void logOut()
 	{
-    await LocalStorage.RemoveItemAsync("token");
-		NavigationManager.NavigateTo("/login");
+		await LocalStorage.RemoveItemAsync("token");
+		NavigationManager.NavigateTo("/");
 	}
 }
