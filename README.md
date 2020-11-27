@@ -14,6 +14,10 @@ Esta aplicación de monitorias en la parte del back end se desarrolló una WebAp
 En el front end de esta aplicación se utilizó Blazor para desarrollar una SPA “single-page-application” y basar la aplicación en componentes para tener un mejor rendimiento. También se utilizó la librería System.Net.Http.Json en la versión 3.2.1 para realizar las consultas http de la API desde el front end.
 
 ![monitorias](https://firebasestorage.googleapis.com/v0/b/files-f91c4.appspot.com/o/Frame%206.png?alt=media&token=fe82f14a-75a3-4ad5-ab12-e08a9907342c)
+![monitorias](https://firebasestorage.googleapis.com/v0/b/files-f91c4.appspot.com/o/Frame%206.png?alt=media&token=fe82f14a-75a3-4ad5-ab12-e08a9907342c)
+![monitorias](https://firebasestorage.googleapis.com/v0/b/files-f91c4.appspot.com/o/WhatsApp%20Image%202020-11-27%20at%2012.04.27%20AM.jpeg?alt=media&token=ecea5a1f-bec6-4b85-85eb-9126810d47c4)
+
+![monitorias](https://firebasestorage.googleapis.com/v0/b/files-f91c4.appspot.com/o/WhatsApp%20Image%202020-11-26%20at%2011.46.43%20PM.jpeg?alt=media&token=a41ec26e-886c-4a6e-9854-3b9ecab72150)
 
 ## Pasos para correr el proyecto:
 1. Clonar el repositorio del proyecto ```git clone https://github.com/JuandaGarcia/frontend-monitorias.git```
