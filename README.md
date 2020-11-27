@@ -4,6 +4,14 @@
 ## Descripción del proyecto
 Este proyecto sirve para llevar un control de las monitorias de la Universidad Santiago de Cali. La plataforma cuenta con tres roles de usuario (administrador, usuario normal, monitor) donde el usuario administrado puede crear monitorias, editarlas o eliminarlas, también puede crear convertir usuarios en monitores y asignarles monitorias creadas. El usuario normal puede ver las monitorias que están disponibles y apuntarse a ellas, también pueden ver un horario donde aparecen las monitorias a las cuales se han apuntado. Este es realizado con Blazor de dotnet y se conecta a una API hecha con web-api de dotnet. Repositorio de la API: https://github.com/Catmendoza/monitorias-backend
 
+## Integrantes
+- Catalina Mendoza
+- Juan Jose Castro
+- Juan David García Rincón
+
+## Explicación Técnica
+![monitorias](https://firebasestorage.googleapis.com/v0/b/files-f91c4.appspot.com/o/Frame%206.png?alt=media&token=fe82f14a-75a3-4ad5-ab12-e08a9907342c)
+
 ## Pasos para correr el proyecto:
 1. Clonar el repositorio del proyecto ```git clone https://github.com/JuandaGarcia/frontend-monitorias.git```
 2. Tener instalado dotnet. https://dotnet.microsoft.com/download
