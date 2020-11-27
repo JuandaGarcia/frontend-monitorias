@@ -198,3 +198,9 @@
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 }
+
+.modal__see {
+	width: 100%;
+	max-height: 80vh;
+	overflow-y: scroll;
+}

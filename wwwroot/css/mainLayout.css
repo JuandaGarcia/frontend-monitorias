@@ -158,6 +158,15 @@
 	cursor: pointer;
 }
 
+.form-monitoria__button.comment {
+	display: flex;
+	width: 40%;
+	margin: 0;
+	margin-left: auto;
+	align-items: center;
+	justify-content: center;
+}
+
 .form-monitoria__button.monitorias {
 	display: flex;
 	align-items: center;

@@ -26,8 +26,8 @@
 			<div class="modal">
 					<div class="modal__container">
 						<button @onclick="closeModal" class="modal__container__exit"></button>
-						<div>
-              <div>
+						<div class="modal__see">
+              		<div>
                   <h3 class="add-monitoria__item__title">
                   @monitoriaModal.Name
                   </h3>
@@ -41,6 +41,38 @@
                   <p><strong>Sala: </strong>@monitoriaModal.livingRoom</p>
                   <p><strong>Cupos: </strong>@monitoriaModal.initialQuotas</p>
                   </div>
+									@if (monitoriaModal.monitor == usuario.Id)
+									{
+									<br>
+									<hr>
+									<br>
+									<form @onsubmit="@(() => sendComment(monitoriaModal.Id))">
+										<textarea class="form-monitoria__input text-area long" @bind="textComment" required placeholder="Descripción" cols="30" rows="5"></textarea>
+										<button class="form-monitoria__button comment" type="submit">Publicar</button>
+									</form>
+									}
+									<br>
+									<hr>
+									<br>
+									<div>
+										@if (loadingComments)
+										{
+												<span>Cargando...</span>
+										}else{
+										@if (commets.Length == 0)
+										{
+												<span>No hay comentarios disponibles</span>
+										}else {
+											@foreach (var item in commets)
+											{
+												<div>
+													<span>@item.description</span>
+													<button @onclick="@(() => removeComment(item.Id, monitoriaModal.Id))" class="monitorias__item__button trash"></button>
+												</div>
+											}
+										}
+										}
+									</div>
 						</div>
 					</div>
 				<div @onclick="closeModal" class="modal__overlay"></div>
@@ -91,12 +123,15 @@
   public bool loading = true;
   bool loadingToken = true;
   public bool modal = false;
+  bool loadingComments = true;
   public string currentModal = "";
   public string[] token;
+  private string textComment;
   Usuario usuario { get; set; }
 	
   Monitoria[] monitorias { get; set; }
   Monitoria monitoriaModal { get; set; }
+  Comentario[] commets { get; set; }
 
   private static readonly System.Text.Json.JsonSerializerOptions s_options = 
     new System.Text.Json.JsonSerializerOptions() 
@@ -129,15 +164,34 @@
 		StateHasChanged();
 	}
 
-	private void openModal(Monitoria modalMonitoria)
+	private async Task openModal(Monitoria modalMonitoria)
     {
 				monitoriaModal = modalMonitoria;
         modal = true;
+        await getComments(modalMonitoria.Id);
     }
  	private void closeModal()
     {
         modal = false;
     }
+
+    private async Task sendComment(string id)
+    {
+			var httpResponse = await Http.GetFromJsonAsync<Comentario[]>("http://localhost:8080/api/comentarios/"+id+"/"+textComment, s_options);
+    	commets = httpResponse;
+    }
+
+    private async Task removeComment(string idComment ,string idMonitoria){
+		var httpResponse = await Http.DeleteAsync("http://localhost:8080/api/comentarios/"+idComment+"/"+idMonitoria);
+		commets = await httpResponse.Content.ReadFromJsonAsync<Comentario[]>();
+	}
+
+  private async Task getComments(string id) {
+		loadingComments = true;
+		var httpResponse = await Http.GetFromJsonAsync<Comentario[]>("http://localhost:8080/api/comentarios/bymonitoria/"+id, s_options);
+    commets = httpResponse;
+		loadingComments = false;
+	}
 
 	private static string cssItem(string faculty)
 	{

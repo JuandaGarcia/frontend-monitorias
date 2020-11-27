@@ -126,6 +126,7 @@
 								<p><strong>Cupos: </strong>@item.initialQuotas</p>
 							</div>
 				}else{
+						
 					<div class="add-monitoria__item">
 					<div>
 					<h3 class="add-monitoria__item__title">
@@ -175,10 +176,12 @@
 @code {
   public bool loading = true;
   bool loadingToken = true;
+  bool loadingAvailables = false;
   public bool modal = false;
   public string currentModal = "";
   public string currentId = "";
   public string[] token;
+	
   Usuario usuario { get; set; }
 	
   Monitoria[] monitorias { get; set; }
@@ -201,9 +204,15 @@
 				}else{
 					loadingToken = false;
 					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );
-					usuario = httpResponseUser; 
+					usuario = httpResponseUser;
+					if (usuario.roll == 1)
+					{
         	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
         	monitorias = httpResponse;
+					}else{
+        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/availablesusers", s_options);
+        	monitorias = httpResponse;
+					}
         	loading = false;
 				}
     }
@@ -223,14 +232,18 @@
     }
 
 	private async Task addStudent() {
+		loadingAvailables= true;
 		var httpResponse = await Http.PostAsJsonAsync("http://localhost:8080/api/monitorias/"+currentId+"/"+usuario.Id, s_options);
 		monitorias = await httpResponse.Content.ReadFromJsonAsync<Monitoria[]>();
+		loadingAvailables = false;
 		closeModal();
 	}
 
 	private async Task removestudent(){
+		loadingAvailables=true;
 		var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/removestudent/"+currentId+"/"+usuario.Id, s_options);
 		monitorias = httpResponse;
+		loadingAvailables = false;
 		closeModal();
 	}
 	private async Task eliminarMonitoria(){

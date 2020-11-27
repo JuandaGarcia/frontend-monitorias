@@ -1,6 +1,8 @@
 @page "/mis-monitorias"
 @using System.Net.Http
 @using System.Net.Http.Json
+@using Newtonsoft.Json
+@using System.Text
 @inject HttpClient Http
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject NavigationManager NavigationManager
@@ -26,7 +28,53 @@
 			<div class="modal">
 					<div class="modal__container">
 						<button @onclick="closeModal" class="modal__container__exit"></button>
-						<div>
+						<div class="modal__see">
+              		<div>
+                  <h3 class="add-monitoria__item__title">
+                  @misMonitorias.Name
+                  </h3>
+                  <br>
+                  <p>
+                    @misMonitorias.faculty
+                  </p>
+                  <p><strong>Día: </strong>@misMonitorias.day</p>
+                  <p><strong>Hora de inicio: </strong>@DateTime.Parse(misMonitorias.init).ToShortTimeString()</p>
+                  <p><strong>Hora de Fin: </strong>@DateTime.Parse(misMonitorias.end).ToShortTimeString()</p>
+                  <p><strong>Sala: </strong>@misMonitorias.livingRoom</p>
+                  <p><strong>Cupos: </strong>@misMonitorias.initialQuotas</p>
+                  </div>
+									@if (misMonitorias.monitor == usuario.Id)
+									{
+									<br>
+									<hr>
+									<br>
+									<form @onsubmit="@(() => sendComment(misMonitorias.Id))">
+										<textarea class="form-monitoria__input text-area long" @bind="textComment" required placeholder="Descripción" cols="30" rows="5"></textarea>
+										<button class="form-monitoria__button comment" type="submit">Publicar</button>
+									</form>
+									}
+									<br>
+									<hr>
+									<br>
+									<div>
+										@if (loadingComments)
+										{
+												<span>Cargando...</span>
+										}else{
+										@if (commets.Length == 0)
+										{
+												<span>No hay comentarios disponibles</span>
+										}else {
+											@foreach (var item in commets)
+											{
+												<div>
+													<span>@item.description</span>
+													<button @onclick="@(() => removeComment(item.Id, misMonitorias.Id))" class="monitorias__item__button trash"></button>
+												</div>
+											}
+										}
+										}
+									</div>
 						</div>
 					</div>
 				<div @onclick="closeModal" class="modal__overlay"></div>
@@ -57,7 +105,7 @@
 								var lunes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Lunes");
 								@foreach (var item in lunes)
 								{
-									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -73,7 +121,7 @@
 								var martes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Martes");
 								@foreach (var item in martes)
 								{
-									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -89,7 +137,7 @@
 								var miercoles = new List<Monitoria>(monitorias).FindAll(e => e.day == "Miércoles");
 								@foreach (var item in miercoles)
 								{
-									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -105,7 +153,7 @@
 								var jueves = new List<Monitoria>(monitorias).FindAll(e => e.day == "Jueves");
 								@foreach (var item in jueves)
 								{
-									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -121,7 +169,7 @@
 								var viernes = new List<Monitoria>(monitorias).FindAll(e => e.day == "Viernes");
 								@foreach (var item in viernes)
 								{
-									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -137,7 +185,7 @@
 								var sabado = new List<Monitoria>(monitorias).FindAll(e => e.day == "Sábado");
 								@foreach (var item in sabado)
 								{
-									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -153,7 +201,7 @@
 								var domingo = new List<Monitoria>(monitorias).FindAll(e => e.day == "Domingo");
 								@foreach (var item in domingo)
 								{
-									<div @onclick="@(() => openModal(item.Id))" class="@cssItem(item.faculty)">
+									<div @onclick="@(() => openModalUser(item))" class="@cssItem(item.faculty)">
 										<span class="horario__item__title">
 											@item.Name
 										</span>
@@ -173,13 +221,17 @@
 @code {
   public bool loading = true;
   bool loadingToken = true;
+  bool loadingComments = true;
   public bool modal = false;
   public string currentModal = "";
   public string currentId = "";
   public string[] token;
+	private string textComment;
   Usuario usuario { get; set; }
 	
   Monitoria[] monitorias { get; set; }
+  Comentario[] commets { get; set; }
+  Monitoria misMonitorias { get; set; }
 
   private static readonly System.Text.Json.JsonSerializerOptions s_options = 
     new System.Text.Json.JsonSerializerOptions() 
@@ -195,16 +247,16 @@
   			var aux = await localStorage.GetItemAsync<string>("token");
 				if(aux == null){
 					loadingToken = false;
-					NavigationManager.NavigateTo("/");
+					NavigationManager.NavigateTo("/login");
 				}else{
 					loadingToken = false;
 					var httpResponseUser = await Http.GetFromJsonAsync<Usuario>("http://localhost:8080/api/usuarios/" + aux, s_options );
-					usuario = httpResponseUser; 
+					usuario = httpResponseUser;
 					if (usuario.roll == 1)
 					{
 							NavigationManager.NavigateTo("/monitorias");
 					}
-        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/monitor/"+usuario.Id, s_options);
+        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/list/"+usuario.Id, s_options);
         	monitorias = httpResponse;
         	loading = false;
 				}
@@ -212,11 +264,13 @@
 		StateHasChanged();
 	}
 
-	private void openModal(string id)
+	private async Task openModalUser(Monitoria monitoria)
     {
-				currentId = id;
+				misMonitorias = monitoria;
         modal = true;
+				await getComments(monitoria.Id);
     }
+	
  	private void closeModal()
     {
 				currentId = "";
@@ -246,6 +300,12 @@
 		}
 	}
 
+	private async Task sendComment(string id)
+    {
+			var httpResponse = await Http.GetFromJsonAsync<Comentario[]>("http://localhost:8080/api/comentarios/"+id+"/"+textComment, s_options);
+    	commets = httpResponse;
+    }
+
 	private async Task addStudent() {
 		var httpResponse = await Http.PostAsJsonAsync("http://localhost:8080/api/monitorias/"+currentId+"/"+usuario.Id, s_options);
 		monitorias = await httpResponse.Content.ReadFromJsonAsync<Monitoria[]>();
@@ -256,5 +316,17 @@
 		var httpResponse = await Http.DeleteAsync("http://localhost:8080/api/monitorias/"+currentId);
 		monitorias = await httpResponse.Content.ReadFromJsonAsync<Monitoria[]>();
 		closeModal();
+	}
+
+	private async Task getComments(string id) {
+		loadingComments = true;
+		var httpResponse = await Http.GetFromJsonAsync<Comentario[]>("http://localhost:8080/api/comentarios/bymonitoria/"+id, s_options);
+    commets = httpResponse;
+		loadingComments = false;
+	}
+
+	private async Task removeComment(string idComment ,string idMonitoria){
+		var httpResponse = await Http.DeleteAsync("http://localhost:8080/api/comentarios/"+idComment+"/"+idMonitoria);
+		commets = await httpResponse.Content.ReadFromJsonAsync<Comentario[]>();
 	}
 }
