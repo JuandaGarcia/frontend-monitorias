@@ -65,15 +65,15 @@
 		var response = await Http.PostAsJsonAsync("http://localhost:8080/api/usuarios/register", postBody);
 
 		var responseString = await response.Content.ReadFromJsonAsync<responseData>();
-		
+
 
 		if (responseString.error == "")
 		{
 			if (responseString.token != null)
-    	{
+			{
 				await localStore.SetItemAsync("token", responseString.token);
 				NavigationManager.NavigateTo("/monitorias");
-    	}
+			}
 		}
 		else
 		{

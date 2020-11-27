@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Frontend.csproj",
+  "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Frontend.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -131,6 +131,39 @@
         }
       },
       {
+        "HashCode": -829998261,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.MisMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "MisMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.MisMonitorias"
+        }
+      },
+      {
+        "HashCode": -1706497371,
+        "Kind": "Components.Component",
+        "Name": "Frontend.Pages.MisMonitorias",
+        "AssemblyName": "Frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Frontend.Pages.MisMonitorias"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Frontend.Pages.MisMonitorias",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -2105323887,
         "Kind": "Components.Component",
         "Name": "Frontend.Pages.Monitorias",
@@ -164,35 +197,35 @@
         }
       },
       {
-        "HashCode": -939387378,
+        "HashCode": -1062151425,
         "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Registro",
+        "Name": "Frontend.Pages.MonitoriasAsignadas",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Registro"
+            "TagName": "MonitoriasAsignadas"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Registro"
+          "Common.TypeName": "Frontend.Pages.MonitoriasAsignadas"
         }
       },
       {
-        "HashCode": 2103832581,
+        "HashCode": 290557117,
         "Kind": "Components.Component",
-        "Name": "Frontend.Pages.Registro",
+        "Name": "Frontend.Pages.MonitoriasAsignadas",
         "AssemblyName": "Frontend",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Frontend.Pages.Registro"
+            "TagName": "Frontend.Pages.MonitoriasAsignadas"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.Registro",
+          "Common.TypeName": "Frontend.Pages.MonitoriasAsignadas",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -226,39 +259,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Frontend.Pages.Usuarios",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1062151425,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.MonitoriasAsignadas",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "MonitoriasAsignadas"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.MonitoriasAsignadas"
-        }
-      },
-      {
-        "HashCode": 290557117,
-        "Kind": "Components.Component",
-        "Name": "Frontend.Pages.MonitoriasAsignadas",
-        "AssemblyName": "Frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Frontend.Pages.MonitoriasAsignadas"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Frontend.Pages.MonitoriasAsignadas",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -14957,92 +14957,92 @@
   "RootNamespace": "Frontend",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\NavMenuUser.razor",
-      "TargetPath": "Shared\\NavMenuUser.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\_Host.cshtml",
-      "TargetPath": "Pages\\_Host.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\App.razor",
-      "TargetPath": "App.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\MonitoriasAsignadas.razor",
-      "TargetPath": "Pages\\MonitoriasAsignadas.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Registro.razor",
-      "TargetPath": "Pages\\Registro.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\NavMenuMonitor.razor",
-      "TargetPath": "Shared\\NavMenuMonitor.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\MainLayout.razor",
-      "TargetPath": "Shared\\MainLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Monitorias.razor",
-      "TargetPath": "Pages\\Monitorias.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\NavMenu.razor",
-      "TargetPath": "Shared\\NavMenu.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\CrearMonitorias.razor",
-      "TargetPath": "Pages\\CrearMonitorias.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Shared\\Nav.razor",
-      "TargetPath": "Shared\\Nav.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Usuarios.razor",
-      "TargetPath": "Pages\\Usuarios.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\EditarMonitoria.razor",
-      "TargetPath": "Pages\\EditarMonitoria.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\Login.razor",
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Login.razor",
       "TargetPath": "Pages\\Login.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\_Imports.razor",
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Monitorias.razor",
+      "TargetPath": "Pages\\Monitorias.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Registro.razor",
+      "TargetPath": "Pages\\Registro.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Shared\\NavMenu.razor",
+      "TargetPath": "Shared\\NavMenu.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\App.razor",
+      "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
     },
     {
-      "FilePath": "c:\\Users\\Juand\\Desktop\\dotnet\\monitorias-front\\Pages\\MisMonitorias.razor",
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Usuarios.razor",
+      "TargetPath": "Pages\\Usuarios.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\MonitoriasAsignadas.razor",
+      "TargetPath": "Pages\\MonitoriasAsignadas.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Shared\\NavMenuMonitor.razor",
+      "TargetPath": "Shared\\NavMenuMonitor.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Shared\\NavMenuUser.razor",
+      "TargetPath": "Shared\\NavMenuUser.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\_Host.cshtml",
+      "TargetPath": "Pages\\_Host.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Shared\\MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\CrearMonitorias.razor",
+      "TargetPath": "Pages\\CrearMonitorias.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\EditarMonitoria.razor",
+      "TargetPath": "Pages\\EditarMonitoria.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Shared\\Nav.razor",
+      "TargetPath": "Shared\\Nav.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\catic\\Documents\\proyectos\\.Net\\frontend-monitorias\\Pages\\MisMonitorias.razor",
       "TargetPath": "Pages\\MisMonitorias.razor",
       "FileKind": "component"
     }
