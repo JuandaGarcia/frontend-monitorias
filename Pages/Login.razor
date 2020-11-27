@@ -8,36 +8,41 @@
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 
-@if(loadingToken) {
+@if (loadingToken)
+{
 	<div></div>
-}else {
+}
+else
+{
 
-<main class="loginRegister">
-	<section class="loginRegister__formSection">
-		<img class="loginRegister__logo" src="/img/logo.png" alt="Logo" />
-		<form class="loginRegister__form" action="">
-			<h1 class="loginRegister__title">Iniciar Sesión</h1>
-			<input placeholder="Correo" class="loginRegister__input" type="email" value="@mail"
-				@oninput="OnEmailChanged" />
-			<input placeholder="Contraseña" class="loginRegister__input" type="password" value="@password"
-				@oninput="OnPasswordChanged" />
-			<button class="loginRegister__button" type="button" @onclick="@sendData">Iniciar Sesión</button>
-			<p class="loginRegister__question">
-				¿Aún no tienes cuenta?
-				<a class="loginRegister__question__a" href="/register">
-					Regístrate
-				</a>
-			</p>
-		</form>
-	</section>
-	<section class="loginRegister__imageSection">
-		<h2 class="loginRegister__imageSection__title">
-			Sistema de <br />
-			monitorias
-		</h2>
-		<img class="loginRegister__imageSection__img" src="/img/login-register/students.png" alt="Estudiantes" />
-	</section>
-</main>
+	<main class="loginRegister">
+	 <section class="loginRegister__formSection">
+	  <img class="loginRegister__logo" src="/img/logo.png" alt="Logo" />
+	  <form class="loginRegister__form" action="">
+	   <h1 class="loginRegister__title">Iniciar Sesión</h1>
+	   <input placeholder="Correo" class="loginRegister__input" type="email" value="@mail"
+		@oninput="OnEmailChanged" />
+
+	   <input placeholder="Contraseña" class="loginRegister__input" type="password" value="@password"
+		@oninput="OnPasswordChanged" />
+	   <p>@error</p>
+	   <button class="loginRegister__button" type="button" @onclick="@sendData">Iniciar Sesión</button>
+	   <p class="loginRegister__question">
+		¿Aún no tienes cuenta?
+		<a class="loginRegister__question__a" href="/register">
+		 Regístrate
+		</a>
+	   </p>
+	  </form>
+	 </section>
+	 <section class="loginRegister__imageSection">
+	  <h2 class="loginRegister__imageSection__title">
+	   Sistema de <br />
+	   monitorias
+	  </h2>
+	  <img class="loginRegister__imageSection__img" src="/img/login-register/students.png" alt="Estudiantes" />
+	 </section>
+	</main>
 }
 
 @code {
@@ -52,17 +57,20 @@
 		public string error { get; set; }
 	}
 
-	protected async override Task OnAfterRenderAsync(bool firstRender)    
+	protected async override Task OnAfterRenderAsync(bool firstRender)
 	{
 		if (firstRender)
-    {
-    var aux = await localStorage.GetItemAsync<string>("token");
-				if(aux == null){
-					loadingToken = false;
-				}else{
-					loadingToken = false;
-					NavigationManager.NavigateTo("/monitorias");
-				}
+		{
+			var aux = await localStorage.GetItemAsync<string>("token");
+			if (aux == null)
+			{
+				loadingToken = false;
+			}
+			else
+			{
+				loadingToken = false;
+				NavigationManager.NavigateTo("/monitorias");
+			}
 		}
 		StateHasChanged();
 	}
