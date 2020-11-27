@@ -403,3 +403,17 @@ C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\RazorDecl
 C:\Users\Juand\Desktop\dotnet\monitorias-front\obj\Debug\netcoreapp3.1\Razor\Pages\MonitoriasAsignadas.razor.g.cs
 C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Juand\Desktop\dotnet\monitorias-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MisMonitorias.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MonitoriasAsignadas.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Usuarios.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\Nav.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenuMonitor.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenuUser.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\Razor\Pages\MisMonitorias.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\Razor\Pages\MonitoriasAsignadas.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\Razor\Pages\Usuarios.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\Razor\Shared\Nav.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenuMonitor.razor.g.cs
+C:\Users\Juan Jose Castro\Desktop\frontend-monitorias\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenuUser.razor.g.cs
