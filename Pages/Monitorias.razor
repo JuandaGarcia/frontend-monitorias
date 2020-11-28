@@ -97,10 +97,17 @@
 						@if(usuario.roll == 1){
 						<a class="form-monitoria__button monitorias" href="/nueva-monitoria">Crear una monitoria</a>
 						}
+		@if (monitorias.Length == 0)
+		{
+			<span>Aún no hay monitorias inscriptas</span>
+		
+		}else{
           @if (loading == false){
             @foreach (var item in monitorias)
-            {
+            { 
+				
 				if(usuario.roll == 1){
+					
 					<div class="monitorias__item">
 								<div class="monitorias__item__header">
 									<h2>@item.Name</h2>
@@ -126,47 +133,52 @@
 								<p><strong>Cupos: </strong>@item.initialQuotas</p>
 							</div>
 				}else{
+					@if (usuario.Id != item.monitor)
+					{
+						<div class="add-monitoria__item">
+						<div>
+						<h3 class="add-monitoria__item__title">
+						@item.Name
+						</h3>
+						<br>
+						<p>
+							@item.faculty
+						</p>
+						<p><strong>Día: </strong>@item.day</p>
+						<p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
+						<p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
+						<p><strong>Sala: </strong>@item.livingRoom</p>
+						<p><strong>Cupos: </strong>@item.initialQuotas</p>
+						</div>
+						<div class="flex-center">
+							@{bool isStudent = false;
 						
-					<div class="add-monitoria__item">
-					<div>
-					<h3 class="add-monitoria__item__title">
-					@item.Name
-					</h3>
-					<br>
-					<p>
-						@item.faculty
-					</p>
-					<p><strong>Día: </strong>@item.day</p>
-					<p><strong>Hora de inicio: </strong>@DateTime.Parse(item.init).ToShortTimeString()</p>
-					<p><strong>Hora de Fin: </strong>@DateTime.Parse(item.end).ToShortTimeString()</p>
-					<p><strong>Sala: </strong>@item.livingRoom</p>
-					<p><strong>Cupos: </strong>@item.initialQuotas</p>
-					</div>
-					<div class="flex-center">
-						@{bool isStudent = false;
-					
-						foreach (var idUser in item.students)
-						{
-							if (idUser == usuario.Id)
+							foreach (var idUser in item.students)
 							{
-									isStudent = true;
+								if (idUser == usuario.Id)
+								{
+										isStudent = true;
+								}
 							}
-						}
-						if (!isStudent)
-						{
-							<button class="form-monitoria__button modalMonitor" @onclick="@(() => openModal(item.Id, "addstudent"))">Apuntarse</button>
-						}else{
-							<button class="form-monitoria__button modalMonitor red" @onclick="@(() => openModal(item.Id, "removestudent"))">Salir de esta monitoria</button>
-						}
-						}
-					</div>
-					</div>
+							if (!isStudent)
+							{
+								<button class="form-monitoria__button modalMonitor" @onclick="@(() => openModal(item.Id, "addstudent"))">Apuntarse</button>
+							}else{
+								<button class="form-monitoria__button modalMonitor red" @onclick="@(() => openModal(item.Id, "removestudent"))">Salir de esta monitoria</button>
+							}
+							}
+						</div>
+						</div>
+					}
+					
+					
 				}
 							
             }
           }else{
             <div>loading...</div>
           }
+		}
 					</div>
         </main>
 			</div>
@@ -178,6 +190,7 @@
   bool loadingToken = true;
   bool loadingAvailables = false;
   public bool modal = false;
+  bool vacio = false;
   public string currentModal = "";
   public string currentId = "";
   public string[] token;
@@ -195,9 +208,10 @@
 
 	protected async override Task OnAfterRenderAsync(bool firstRender)    
 	{
+		
 		if (firstRender)
-    {
-  			var aux = await localStorage.GetItemAsync<string>("token");
+		{
+			var aux = await localStorage.GetItemAsync<string>("token");
 				if(aux == null){
 					loadingToken = false;
 					NavigationManager.NavigateTo("/");
@@ -207,15 +221,16 @@
 					usuario = httpResponseUser;
 					if (usuario.roll == 1)
 					{
-        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
-        	monitorias = httpResponse;
+						var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias", s_options);
+						monitorias = httpResponse;
 					}else{
-        	var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/availablesusers", s_options);
-        	monitorias = httpResponse;
-					}
-        	loading = false;
+						var httpResponse = await Http.GetFromJsonAsync<Monitoria[]>("http://localhost:8080/api/monitorias/availablesusers", s_options);
+						monitorias = httpResponse;
+						
 				}
-    }
+				loading = false;
+			}
+		}
 		StateHasChanged();
 	}
 

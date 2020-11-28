@@ -262,6 +262,9 @@
 	outline: none;
 	cursor: pointer;
 }
+.limodal{
+	margin-left: 1em;
+}
 
 @keyframes fadeUp {
 	from {
@@ -271,3 +274,4 @@
 		opacity: 1;
 	}
 }
+

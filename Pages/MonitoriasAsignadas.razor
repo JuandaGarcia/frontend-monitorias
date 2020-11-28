@@ -28,6 +28,18 @@
 						<button @onclick="closeModal" class="modal__container__exit"></button>
 						<div class="modal__see">
               		<div>
+				<h3>Lista de estudiantes registrados:</h3>
+				@if (loadingStudents == false)
+				{
+					<ol>
+					@foreach (var item in students)
+					{
+						<li class="limodal">@item.name - @item.career</li>
+					}
+					</ol>
+				}
+				<hr>
+				<br>
                   <h3 class="add-monitoria__item__title">
                   @monitoriaModal.Name
                   </h3>
@@ -124,6 +136,7 @@
   bool loadingToken = true;
   public bool modal = false;
   bool loadingComments = true;
+  bool loadingStudents = true;
   public string currentModal = "";
   public string[] token;
   private string textComment;
@@ -132,6 +145,7 @@
   Monitoria[] monitorias { get; set; }
   Monitoria monitoriaModal { get; set; }
   Comentario[] commets { get; set; }
+  responseData[] students {get; set;}
 
   private static readonly System.Text.Json.JsonSerializerOptions s_options = 
     new System.Text.Json.JsonSerializerOptions() 
@@ -169,6 +183,7 @@
 				monitoriaModal = modalMonitoria;
         modal = true;
         await getComments(modalMonitoria.Id);
+		await getStudents(modalMonitoria.Id);
     }
  	private void closeModal()
     {
@@ -215,6 +230,18 @@
               return "horario__item c1";
 		}
 	}
+public class responseData
+	{
+		public string name { get; set; }
+		public string career { get; set; }
+	}
+	private async Task getStudents(string id){
+		loadingStudents = true;
+		var httpResponse = await Http.GetFromJsonAsync<responseData[]>("http://localhost:8080/api/monitorias/getStudents/"+id, s_options);
+		students = httpResponse;
+		Console.WriteLine(httpResponse[0].name);
+		loadingStudents = false;
+	} 
 
 
 }
