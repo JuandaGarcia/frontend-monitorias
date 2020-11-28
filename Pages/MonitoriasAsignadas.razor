@@ -31,12 +31,24 @@
 				<h3>Lista de estudiantes registrados:</h3>
 				@if (loadingStudents == false)
 				{
-					<ol>
-					@foreach (var item in students)
+					@if (arrayData)
 					{
-						<li class="limodal">@item.name - @item.career</li>
+						@if (students.Length != 0)
+						{
+							<ol>
+							@foreach (var item in students)
+							{
+								<li class="limodal">@item.name - @item.career</li>
+							}
+							</ol>
+				
+						}else{
+							<span>No hay estudiantes registrados</span>
+						}
+						
 					}
-					</ol>
+					
+					
 				}
 				<hr>
 				<br>
@@ -140,6 +152,7 @@
   public string currentModal = "";
   public string[] token;
   private string textComment;
+  bool arrayData = false;
   Usuario usuario { get; set; }
 	
   Monitoria[] monitorias { get; set; }
@@ -236,10 +249,16 @@ public class responseData
 		public string career { get; set; }
 	}
 	private async Task getStudents(string id){
+		arrayData = false;
 		loadingStudents = true;
 		var httpResponse = await Http.GetFromJsonAsync<responseData[]>("http://localhost:8080/api/monitorias/getStudents/"+id, s_options);
-		students = httpResponse;
-		Console.WriteLine(httpResponse[0].name);
+		
+		if(httpResponse.Length == 0){
+			arrayData =false;
+		}else{
+			students = httpResponse;
+			arrayData =true;
+		}
 		loadingStudents = false;
 	} 
 
